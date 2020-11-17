@@ -1,2 +1,19 @@
-<h1>Restaurants#index</h1>
-<p>Find me in app/views/restaurants/index.html.erb</p>
+<h3>Discover suitable restaurants</h3>
+
+<ul> <%@restaurants.each do |restaurant| %>
+  <li> <strong><%=restaurant.name%></strong>
+    <ul>
+    <li class="sc-italics"><%=restaurant.area%></li>
+    <li><%=restaurant.description%></li>
+    <li> <%= "⭐" * restaurant.user_rating %> </li>
+    <li> <%=restaurant.address%>  </li>
+    <li class="sc-italics">
+      <%= restaurant.food_style%> |
+      <%= restaurant.atmosphere %> |
+      <%= restaurant.food_philosophy %> |
+      <%= restaurant.extras %>
+    </li>
+    </ul>
+ <%end%> 
+</ul>
+  
