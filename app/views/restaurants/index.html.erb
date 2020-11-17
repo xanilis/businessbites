@@ -4,6 +4,7 @@
   <li> <strong><%=restaurant.name%></strong>
     <ul>
     <li class="sc-italics"><%=restaurant.area%></li>
+    <li id="rm-dec"> <%= link_to "Find out more", restaurant_path(restaurant)%> </li>
     <li><%=restaurant.description%></li>
     <li> <%= "⭐" * restaurant.user_rating %> </li>
     <li> <%=restaurant.address%>  </li>
