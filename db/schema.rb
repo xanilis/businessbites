@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_161151) do
+ActiveRecord::Schema.define(version: 2020_11_17_154605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 2020_11_16_161151) do
     t.string "food_philosophy"
     t.string "extras"
     t.integer "user_rating"
-    t.bigint "favorites_id", null: false
-    t.index ["favorites_id"], name: "index_restaurants_on_favorites_id"
+    t.bigint "favorite_id", null: false
+    t.index ["favorite_id"], name: "index_restaurants_on_favorite_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -48,7 +48,9 @@ ActiveRecord::Schema.define(version: 2020_11_16_161151) do
     t.text "description"
     t.string "title"
     t.integer "rating"
+    t.bigint "user_id", null: false
     t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,11 +61,13 @@ ActiveRecord::Schema.define(version: 2020_11_16_161151) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "favorites", "users"
-  add_foreign_key "restaurants", "favorites", column: "favorites_id"
+  add_foreign_key "restaurants", "favorites"
   add_foreign_key "reviews", "restaurants"
+  add_foreign_key "reviews", "users"
 end
