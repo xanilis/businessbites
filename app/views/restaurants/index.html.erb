@@ -11,6 +11,7 @@
             <div>
               <h2><strong><%=restaurant.name%></strong></h2>
                     <li class="sc-italics">
+                      <%= link_to "Find out more", restaurant_path(restaurant)%>
                       <%= restaurant.food_style%> |
                       <%= restaurant.atmosphere %> |
                       <%= restaurant.food_philosophy %> |
