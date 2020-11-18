@@ -1,0 +1,22 @@
+li {
+  list-style-type: none;
+}
+
+.sc-italics {
+  text-decoration: italic;
+  font-variant: small-caps;
+}
+
+
+li a {
+  text-decoration: italic;
+  color:#98C1D9;
+
+}
+
+li a:hover {
+  background-color: #293241;
+  text-decoration: none; 
+  color:white; 
+  
+}
