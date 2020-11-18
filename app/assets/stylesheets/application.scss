@@ -11,3 +11,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+.absolute-navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.absolute-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
