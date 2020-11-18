@@ -1,17 +1,64 @@
-<h2><%=@restaurant.name%></h2>
+<div class="container">
+  <h1 class="main-title"><%=@restaurant.name%></h1>
+</div>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%=link_to "Home", root_path%></li>
+    <li class="breadcrumb-item"><%= link_to "Restaurants", restaurants_path%></li>
+    <li class="breadcrumb-item active" aria-current="page"><%=@restaurant.name.titleize%></li>
+  </ol>
+</nav>
+
+<div class="container pos-desc">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag("belcanto1.jpg", class:"d-block w-100 cr-format")%>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag("belcanto2.jpg", class:"d-block w-100 cr-format")%>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag("belcanto3.jpg", class:"d-block w-100 cr-format")%>
+      </div>
+        <div class="carousel-item">
+        <%= image_tag("belcanto4.jpg", class:"d-block w-100 cr-format")%>
+      </div>
+        <div class="carousel-item">
+        <%= image_tag("belcanto5.jpg", class:"d-block w-100 cr-format")%>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
 
 <ul>
-    <ul>
-    <li class="sc-italics"><%=@restaurant.area%></li>
-    <li><%=@restaurant.description%></li>
-    <li> <%= "⭐" * @restaurant.user_rating %> </li>
-    <li> <%=@restaurant.address%>  </li>
-    <li class="sc-italics">
-      <%= @restaurant.food_style%> |
-      <%= @restaurant.atmosphere %> |
-      <%= @restaurant.food_philosophy %> |
-      <%= @restaurant.extras %>
-    </li>
-    </ul>
+  <li> User Rating: <%= "⭐" * @restaurant.user_rating %> </li>
+  <li class="sc-italics"><%=@restaurant.area%> |
+    <%= @restaurant.atmosphere %> |
+    <%= @restaurant.food_philosophy %> |
+    <%= @restaurant.extras %>
+  </li>
+  <li><%=@restaurant.description%></li>
+  <li> <%=@restaurant.address%>  </li>
+  <li class="sc-italics">
+    <%= @restaurant.food_style%> |
+  </li>
 </ul>
   
