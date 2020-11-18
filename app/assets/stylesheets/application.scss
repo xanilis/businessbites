@@ -12,6 +12,14 @@
 @import "components/index";
 @import "pages/index";
 
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
 
 .absolute-navbar {
   position: sticky;
@@ -19,8 +27,13 @@
   width: 100%;
 }
 
-.absolute-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+.content {
+  flex: 1 0 auto;
 }
+
+.absolute-footer {
+  flex-shrink: 0;
+}
+
+
+
