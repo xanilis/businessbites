@@ -1,17 +1,25 @@
-<h1>Welcome</h1>
 
-<h3>Please choose a date</h3>
+  <h1>WELCOME</h1>
+  <h4>discover the best restaurants</h4>
 
-<hr>
+  <div class="first-question">
+  <h3>Please choose a date</h3>
 
-<p>We want to make sure that we show you only available restaurnts.</p>
+  <hr>
 
-<div class="container-form-date">
-  <%= simple_form_for restaurants_path, method: :get do |f| %>
-    <%= f.input :date, html5:true, as: :date%>
-    <%= link_to 'Skip this', restaurants_path %>
-    <%= f.button :submit, 'Confirm Date' %>
-  <% end %>
+  <p>We want to make sure that we show you only available restaurnts.</p>
+
+  <div class="container-form-date">
+    <%= simple_form_for restaurants_path, method: :get do |f| %>
+      <%= f.input :date, html5:true, as: :date%>
+      <div class="skip-confirm-design">
+      <%= link_to 'Skip this', restaurants_path %>
+      <%= link_to root_path(anchor: 'question_2') do %>
+        <%= f.button :submit, 'Confirm Date' %>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <h3>How many will participate?</h3>
@@ -21,7 +29,7 @@
 <p>Please choose what kind of event you are planning.</p>
 
 
-<div class="container-form-groupsize">
+<div name="question_2" class="container-form-groupsize">
   <%= simple_form_for restaurants_path, method: :get do |f| %>
     <%= f.button :submit, 'One2One' %>
     <%= f.button :submit, 'Small Group' %>
@@ -46,7 +54,6 @@
     <%= link_to 'Skip this', restaurants_path %>
   <% end %>
 </div>
-
 
 <%=link_to "Index Page for TEST Purposes", restaurants_path%>
 
