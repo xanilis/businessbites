@@ -3,57 +3,59 @@
   <h4>discover the best restaurants</h4>
 
   <div class="first-question">
-  <h3>Please choose a date</h3>
+    <h3>Please choose a date</h3>
+
+    <hr>
+
+    <p>We want to make sure that we show you only available restaurants.</p>
+
+    <div class="container-form-date">
+      <%= simple_form_for restaurants_path, method: :get do |f| %>
+        <%= f.input :date, html5:true, as: :date %>
+        <%= link_to root_path(anchor: 'question_2') do %>
+          <%= f.button :submit, 'Confirm Date', class: "button-big", id: "button-form" %>
+        <% end %>
+        <%= link_to 'Skip this', restaurants_path, class: "skip" %>
+      <% end %>
+    </div>
+  </div>
+
+<div id="question_2" class="second-question">
+  <h3>I am looking for...</h3>
 
   <hr>
 
-  <p>We want to make sure that we show you only available restaurants.</p>
+  <p>Please choose what kind of event or meeting you are planning.</p>
 
-  <div class="container-form-date">
-    <%= simple_form_for @restaurant, url: restaurants_path, method: :get do |f| %>
-      <%= f.input :date, html5:true, as: :date%>
-      <%= link_to root_path(anchor: 'question_2') do %>
-        <%= f.button :submit, 'Confirm Date', class: "button-big", id: "button-form" %>
+
+  <div class="container-form-groupsize">
+    <%= simple_form_for restaurants_path, method: :get do |f| %>
+      <%= link_to root_path(anchor: 'question_3') do %>
+        <%= f.button :submit, 'One2One', class: "button-big", id: "button-form" %>
+        <%= f.button :submit, 'Small Group', class: "button-big", id: "button-form" %>
+        <%= f.button :submit, 'Big group or event', class: "button-big", id: "button-form" %>
       <% end %>
       <%= link_to 'Skip this', restaurants_path, class: "skip" %>
     <% end %>
   </div>
 </div>
 
-<div class="second-question">
-<h3>I am looking for...</h3>
 
-<hr>
+<div id="question_3" class="third-question">
+  <h3>Athmosphere</h3>
 
-<p>Please choose what kind of event or meeting you are planning.</p>
+  <hr>
 
-
-<div name="question_2" class="container-form-groupsize">
-  <%= simple_form_for @restaurant, url: restaurants_path, method: :get do |f| %>
-    <%= f.button :submit, 'One2One', class: "button-big", id: "button-form" %>
-    <%= f.button :submit, 'Small Group', class: "button-big", id: "button-form" %>
-    <%= f.button :submit, 'Big group or event', class: "button-big", id: "button-form" %>
-    <%= link_to 'Skip this', restaurants_path, class: "skip" %>
-  <% end %>
-</div>
-</div>
+  <p>Choosing the right environment is key to a succesful meeting.</p>
 
 
-<div class="third-question">
-<h3>Athmosphere</h3>
-
-<hr>
-
-<p>Choosing the right environment is key to a succesful meeting.</p>
-
-
-<div class="container-form-groupsize">
-  <%= simple_form_for @restaurant, url: restaurants_path, method: :get do |f| %>
-    <%= f.button :submit, 'Casual', class: "button-big", id: "button-form" %>
-    <%= f.button :submit, 'Formal', class: "button-big", id: "button-form" %>
-    <%= f.button :submit, 'Luxurious', class: "button-big", id: "button-form" %>
-    <%= link_to 'Skip this', restaurants_path, class: "skip" %>
-  <% end %>
-</div>
+  <div class="container-form-groupsize">
+    <%= simple_form_for restaurants_path, method: :get do |f| %>
+      <%= f.button :submit, 'Casual', class: "button-big", id: "button-form" %>
+      <%= f.button :submit, 'Formal', class: "button-big", id: "button-form" %>
+      <%= f.button :submit, 'Luxurious', class: "button-big", id: "button-form" %>
+      <%= link_to 'Skip this', restaurants_path, class: "skip" %>
+    <% end %>
+  </div>
 </div>
 
