@@ -1,1 +1,83 @@
 // Specific CSS for your home-page
+
+h1 {
+  font-family: $headers-font;
+  font-size: 42px;
+  color: #293241;
+  text-align: center;
+  margin-top: 80px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+h4 {
+  font-family: body-font;
+  font-size: 18px;
+  color: #3C896D;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 70px;
+}
+
+
+.first-question {
+  height: 100vh;
+  margin: 16px;
+  padding: 16px;
+  text-align: center;
+}
+
+.second-question {
+  height: 100vh;
+  margin: 16px;
+  padding: 16px;
+  text-align: center;
+}
+
+.third-question {
+  height: 100vh;
+  margin: 16px;
+  padding: 16px;
+  text-align: center;
+}
+
+.container-form-date {
+  text-align: left;
+  margin-top: 26px;
+}
+
+.container-form-groupsize {
+  text-align: center;
+}
+
+
+#button-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #E0FBFC;
+  margin: 18px 0;
+  padding: 16px;
+}
+
+.skip {
+  display: flex;
+  text-align: right;
+  color: #293241;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
