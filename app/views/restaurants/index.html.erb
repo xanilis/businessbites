@@ -1,20 +1,30 @@
-<h3>Discover suitable restaurants</h3>
-
-<ul> <%@restaurants.each do |restaurant| %>
-  <li> <strong><%=restaurant.name%></strong>
-    <ul>
-    <li class="sc-italics"><%=restaurant.area%></li>
-    <li id="rm-dec"> <%= link_to "Find out more", restaurant_path(restaurant)%> </li>
-    <li><%=restaurant.description%></li>
-    <li> <%= "⭐" * restaurant.user_rating %> </li>
-    <li> <%=restaurant.address%>  </li>
-    <li class="sc-italics">
-      <%= restaurant.food_style%> |
-      <%= restaurant.atmosphere %> |
-      <%= restaurant.food_philosophy %> |
-      <%= restaurant.extras %>
-    </li>
-    </ul>
- <%end%> 
-</ul>
-  
+<div class="index">
+    <div class="header">
+      <h3>Discover suitable restaurants</h3>
+    </div>
+  <ul class= "restaurantlist">
+    <%@restaurants.each do |restaurant| %>
+      <div class="container">
+      <div class="card-trip">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><strong><%=restaurant.name%></strong></h2>
+                    <li class="sc-italics">
+                      <%= link_to "Find out more", restaurant_path(restaurant)%>
+                      <%= restaurant.food_style%> |
+                      <%= restaurant.atmosphere %> |
+                      <%= restaurant.food_philosophy %> |
+                      <%= restaurant.extras %>
+                    </li>
+                    <li> <%= "⭐" * restaurant.user_rating %> </li>
+                      <li> <%=restaurant.address%>  </li>
+                    <li class="sc-italics"><%=restaurant.area%></li>
+                      <!--<li id="rm-dec"> <%= link_to "Find out more", restaurant_path(restaurant)%> </li> -->
+            </div>
+          </div>
+          </div>
+      </div>
+    <%end%>
+  </ul>
+</div>
