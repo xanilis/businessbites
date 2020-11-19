@@ -28,6 +28,33 @@ puts "Seeding 10 random favorite restaurant lists.."
   puts "Created favorite list #{Favorite.count}"
 end
 
+puts "Seeding Belcanto"
+
+Restaurant.create!(
+  name: "Belcanto",
+  address: "R. Serpa Pinto 10A",
+  description: "At Belcanto, José Avillez offers a unique gastronomic and sensory journey
+                —contemporary Portuguese cuisine
+                in a sophisticated setting that takes us on a journey in time,
+                from Chiado’s old romantic past to the future.
+
+                With two Michelin stars and currently #42 on “The World’s 50 Best Restaurants List”,
+                Belcanto is located at Lisbon’s historic centre, offers an attentive,
+                welcoming and discreet service, and an extraordinary wine selection
+                that showcases some of the best Portuguese wines
+                as well as other celebrated international references.",
+  photo: "belcanto1.jpg, belcanto2.jpg, belcanto3.jpg, belcanto4.jpg, belcanto5.jpg",
+  food_style: "Portuguese".capitalize,
+  atmosphere: "exclusive".capitalize,
+  area: "chiado".capitalize,
+  food_philosophy: "haute-cuisine".titleize,
+  extras: "extensive wine list".titleize,
+  user_rating: 5,
+  favorite_id: Favorite.all.sample.id,
+)
+
+puts "Belcanto created."
+
 
 puts "Seeding 10 random restaurants"
 
@@ -36,7 +63,7 @@ puts "Seeding 10 random restaurants"
     name: Faker::Restaurant.name,
     address: Faker::Address.street_address,
     description: Faker::Restaurant.description,
-    photo: Faker::Avatar.image,
+    photo: "", 
     food_style: ["Japanese","Fusion","Latin","Portuguese","Spanish","French","Italian"].sample.capitalize,
     atmosphere: ["Calm","Formal","Casual","Quiet","Upscale","luxurious","exclusive","romantic"].sample.capitalize,
     area: ["chiado","bairro alto","alfama","cascais","oeiras","carcavelos","belém","baixa","rossio","Alcântara","Príncipe Real","Parque das Nações"].sample.capitalize,
