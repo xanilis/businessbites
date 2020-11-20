@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_19_170806) do
+ActiveRecord::Schema.define(version: 2020_11_20_090704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,11 +31,6 @@ ActiveRecord::Schema.define(version: 2020_11_19_170806) do
     t.string "address"
     t.text "description"
     t.string "photo"
-    t.string "food_style"
-    t.string "atmosphere"
-    t.string "area"
-    t.string "food_philosophy"
-    t.string "extras"
     t.integer "user_rating"
     t.bigint "favorite_id", null: false
     t.index ["favorite_id"], name: "index_restaurants_on_favorite_id"

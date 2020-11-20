@@ -1,4 +1,19 @@
 <div class="index">
+  <div>
+    <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <%= simple_form_for :search, url: restaurants_path, method: :get do |f| %>
+        <%= f.input :food_styles, label: "Food Style",  collection: $food_styles, as: :check_boxes %>
+        <%= f.input :atmospheres, label: "Atmosphere", collection: $atmospheres, as: :check_boxes  %>
+        <%= f.input :areas, label: "Neighborhood", collection: $areas, as: :check_boxes  %>
+        <%= f.input :food_philosophys, label: "Food Philosphy", collection: $food_philosophys, as: :check_boxes  %>
+        <%= f.input :extras, label: "Extras", collection: $extras, as: :check_boxes  %>
+        <%= f.submit "Search", class: "btn btn-primary m" %>
+        <%= link_to "Reset", restaurants_path  %>
+      <% end %>
+    </div>
+  </div>
+
     <div class="header">
       <h3>Discover suitable restaurants</h3>
     </div>
@@ -11,15 +26,15 @@
             <div>
               <h2><strong><%=restaurant.name%></strong></h2>
                     <li class="sc-italics">
-                      <%= link_to "Find out more", restaurant_path(restaurant)%>
-                      <%= restaurant.food_style%> |
-                      <%= restaurant.atmosphere %> |
-                      <%= restaurant.food_philosophy %> |
-                      <%= restaurant.extras %>
+                      <%= link_to "Find out more", restaurant_path(restaurant)%> |
+                      <%= restaurant.food_style_list %> |
+                      <%= restaurant.atmosphere_list %> |
+                      <%= restaurant.food_philosophy_list %> |
+                      <%= restaurant.extra_list %>
                     </li>
                     <li> <%= "⭐" * restaurant.user_rating %> </li>
                       <li> <%=restaurant.address%>  </li>
-                    <li class="sc-italics"><%=restaurant.area%></li>
+                    <li class="sc-italics"><%=restaurant.area_list %></li>
                       <!--<li id="rm-dec"> <%= link_to "Find out more", restaurant_path(restaurant)%> </li> -->
             </div>
           </div>
