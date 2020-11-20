@@ -1,11 +1,11 @@
 // Specific CSS for your home-page
 
-#welcome {
+#welcome{
   font-family: $headers-font;
   font-size: 42px;
   color: #293241;
-  text-align: center;
-  margin-top: 80px;
+  text-align: center !important;
+  margin-top: 80px !important;
   padding-bottom: 0;
   margin-bottom: 0;
 }
