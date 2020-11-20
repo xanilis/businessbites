@@ -9,11 +9,6 @@
   <h1 class="main-title"><%=@restaurant.name%></h1>
 </div>
 
-
-<% path = @restaurant.photo %>
-<% unless path.empty? %>
-  <% photo_path_array = path.split(/,/) %>
-<%end%>
 <div class="container pos-desc">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -25,6 +20,10 @@
     </ol>
 
     <div class="carousel-inner">
+      <% path = @restaurant.photo %>
+      <% unless path.empty? %>
+      <% photo_path_array = path.split(/,/) %>
+      <%end%>
 
       <div class="carousel-item active">
         <%unless @restaurant.photo.empty?%>
@@ -78,15 +77,37 @@
 </div>
 
 <div class="container">
-    <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * @restaurant.user_rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - @restaurant.user_rating) %></p>
-    <p class="sc-italics d-flex justify-content-start">
-      <span class="badge badge-info"><%= @restaurant.area%> </span>
-      <span class="badge badge-info mg-left"><%= @restaurant.atmosphere %></span>
-      <span class="badge badge-info mg-left"><%= @restaurant.food_philosophy %></span>
-      <span class="badge badge-info mg-left"><%= @restaurant.extras %></span>
-      <span class="badge badge-info mg-left"><%= @restaurant.food_style%></span> 
-    </p>
+  <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * @restaurant.user_rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - @restaurant.user_rating) %></p>
+  <p class="sc-italics d-flex">
+    <span class="badge badge-info"><%= @restaurant.area%> </span>
+    <span class="badge badge-info mg-left"><%= @restaurant.atmosphere %></span>
+    <span class="badge badge-info mg-left"><%= @restaurant.food_philosophy %></span>
+    <span class="badge badge-info mg-left"><%= @restaurant.extras %></span>
+    <span class="badge badge-info mg-left"><%= @restaurant.food_style%></span> 
+  </p>
+
+  <h3> Details </h3> 
+
+  <div class="text-cont">
     <p><%=@restaurant.description%></p>
-    <p> <%=@restaurant.address%>  </p>
+  </div>
+
+  <div class="centered">
+    <button class="button-big">Book now!</button>
+  </div>
+  
+  <h3> Address </h3>
+
+  <div class="address"> 
+    <p><%=@restaurant.address%></p>
+  </div>
+
+  <h3> Reviews </h3>
+
+  <div class="container">
+
+  </div>
+
+  
 </div>
     

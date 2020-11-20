@@ -15,10 +15,31 @@
   </div>
 
     <div class="header">
-      <h3>Discover suitable restaurants</h3>
+      <h3>Discover</h3>
     </div>
+    <div class="search">
+      <%= render "components/search_bar" %>
+    </div>
+
   <ul class= "restaurantlist">
     <%@restaurants.each do |restaurant| %>
+      <%= link_to restaurant_path(restaurant) do %>
+        <div class="card-trip">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" />
+            <div class="card-trip-infos">
+              <div>
+                <h2><strong><%=restaurant.name%></strong></h2>
+                  <li class="sc-italics">
+                    <%= restaurant.food_style%> |
+                    <%= restaurant.atmosphere %> |
+                    <%= restaurant.food_philosophy %> |
+                    <%= restaurant.extras %>
+                  </li>
+                    <%= image_tag("star_full.png") * restaurant.user_rating %>
+              </div>
+            </div>
+        </div>
+      <%end%>
       <div class="container">
       <div class="card-trip">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" />
