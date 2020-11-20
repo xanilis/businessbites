@@ -35,7 +35,7 @@
                     <%= restaurant.food_philosophy_list %> |
                     <%= restaurant.extra_list %>
                   </li>
-                    <%= image_tag("star_full.png") * restaurant.user_rating %>
+                <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * restaurant.user_rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - restaurant.user_rating) %></p>
               </div>
             </div>
         </div>

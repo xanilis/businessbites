@@ -13,6 +13,8 @@ class Restaurant < ApplicationRecord
   $food_philosophys = ["vegan","vegetarian","seafood","traditional","modern","fusion","local","experimential","haute-cuisine"]
   $extras = ["extensive wine list","amuse-bouche","live music"]
 
+  acts_as_taggable_on :tags
+
   include PgSearch::Model
   pg_search_scope :full_search,
     against: [ :name, :user_rating ],
