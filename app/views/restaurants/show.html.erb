@@ -79,14 +79,14 @@
 <div class="container">
   <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * @restaurant.user_rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - @restaurant.user_rating) %></p>
   <p class="sc-italics d-flex">
-    <span class="badge badge-info"><%= @restaurant.area%> </span>
-    <span class="badge badge-info mg-left"><%= @restaurant.atmosphere %></span>
-    <span class="badge badge-info mg-left"><%= @restaurant.food_philosophy %></span>
-    <span class="badge badge-info mg-left"><%= @restaurant.extras %></span>
-    <span class="badge badge-info mg-left"><%= @restaurant.food_style%></span> 
+    <span class="badge badge-info"><%= @restaurant.area_list %> </span>
+    <span class="badge badge-info mg-left"><%= @restaurant.atmosphere_list %></span>
+    <span class="badge badge-info mg-left"><%= @restaurant.food_philosophy_list %></span>
+    <span class="badge badge-info mg-left"><%= @restaurant.extra_list %></span>
+    <span class="badge badge-info mg-left"><%= @restaurant.food_style_list %></span>
   </p>
 
-  <h3> Details </h3> 
+  <h3> Details </h3>
 
   <div class="text-cont">
     <p><%=@restaurant.description%></p>
@@ -95,10 +95,10 @@
   <div class="centered">
     <button class="button-big">Book now!</button>
   </div>
-  
+
   <h3> Address </h3>
 
-  <div class="address"> 
+  <div class="address">
     <p><%=@restaurant.address%></p>
   </div>
 
@@ -108,6 +108,5 @@
 
   </div>
 
-  
+
 </div>
-    

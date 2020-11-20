@@ -30,37 +30,15 @@
               <div>
                 <h2><strong><%=restaurant.name%></strong></h2>
                   <li class="sc-italics">
-                    <%= restaurant.food_style%> |
-                    <%= restaurant.atmosphere %> |
-                    <%= restaurant.food_philosophy %> |
-                    <%= restaurant.extras %>
+                    <%= restaurant.food_style_list%> |
+                    <%= restaurant.atmosphere_list %> |
+                    <%= restaurant.food_philosophy_list %> |
+                    <%= restaurant.extra_list %>
                   </li>
                     <%= image_tag("star_full.png") * restaurant.user_rating %>
               </div>
             </div>
         </div>
-      <%end%>
-      <div class="container">
-      <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" />
-          <div class="card-trip-infos">
-            <div>
-              <h2><strong><%=restaurant.name%></strong></h2>
-                    <li class="sc-italics">
-                      <%= link_to "Find out more", restaurant_path(restaurant)%> |
-                      <%= restaurant.food_style_list %> |
-                      <%= restaurant.atmosphere_list %> |
-                      <%= restaurant.food_philosophy_list %> |
-                      <%= restaurant.extra_list %>
-                    </li>
-                    <li> <%= "⭐" * restaurant.user_rating %> </li>
-                      <li> <%=restaurant.address%>  </li>
-                    <li class="sc-italics"><%=restaurant.area_list %></li>
-                      <!--<li id="rm-dec"> <%= link_to "Find out more", restaurant_path(restaurant)%> </li> -->
-            </div>
-          </div>
-          </div>
-      </div>
-    <%end%>
+      <% end %>
+    <% end %>
   </ul>
-</div>
