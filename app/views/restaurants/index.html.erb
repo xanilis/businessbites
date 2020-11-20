@@ -1,4 +1,19 @@
 <div class="index">
+  <div>
+    <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <%= simple_form_for :search, url: restaurants_path, method: :get do |f| %>
+        <%= f.input :food_styles, label: "Food Style",  collection: $food_styles, as: :check_boxes %>
+        <%= f.input :atmospheres, label: "Atmosphere", collection: $atmospheres, as: :check_boxes  %>
+        <%= f.input :areas, label: "Neighborhood", collection: $areas, as: :check_boxes  %>
+        <%= f.input :food_philosophys, label: "Food Philosphy", collection: $food_philosophys, as: :check_boxes  %>
+        <%= f.input :extras, label: "Extras", collection: $extras, as: :check_boxes  %>
+        <%= f.submit "Search", class: "btn btn-primary m" %>
+        <%= link_to "Reset", restaurants_path  %>
+      <% end %>
+    </div>
+  </div>
+
     <div class="header">
       <h3>Discover</h3>
     </div>
@@ -15,16 +30,15 @@
               <div>
                 <h2><strong><%=restaurant.name%></strong></h2>
                   <li class="sc-italics">
-                    <%= restaurant.food_style%> |
-                    <%= restaurant.atmosphere %> |
-                    <%= restaurant.food_philosophy %> |
-                    <%= restaurant.extras %>
+                    <%= restaurant.food_style_list%> |
+                    <%= restaurant.atmosphere_list %> |
+                    <%= restaurant.food_philosophy_list %> |
+                    <%= restaurant.extra_list %>
                   </li>
-  <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * restaurant.user_rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - restaurant.user_rating) %></p>
+                <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * restaurant.user_rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - restaurant.user_rating) %></p>
               </div>
             </div>
         </div>
-      <%end%>
-    <%end%>
+      <% end %>
+    <% end %>
   </ul>
-</div>
