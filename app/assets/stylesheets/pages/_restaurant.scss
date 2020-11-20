@@ -7,12 +7,15 @@ p {
 }
 
 h1 {
-  color: #21295C; 
+  color: #21295C;
+  margin-top: 0px !important;
+  text-align: left !important;
 }
 
 h3 {
   color: #21295C;
   font-size: 18px; 
+  padding: 8px 0px;
 }
 
 .breadcrumb {
@@ -25,7 +28,8 @@ h3 {
 
   text-align: left;
   padding-left: 0px;
-  margin-left: 6px;
+  align-items: center;
+  margin-left: 8px;
 }
 
 .ul {
@@ -43,7 +47,7 @@ h3 {
 }
 
 .mg-left {
-  margin-left: 12px;
+  margin-left: 8px;
 }
 
 .badge {
@@ -52,9 +56,9 @@ h3 {
 }
 
 .text-cont {
-  border: #293241 solid 1px;
-  padding: 8px;
-  text-align: center;
+  border-left: #293241 solid 1px;
+  padding: 4px 8px;
+  text-align: left;
   margin-top: 12px;
   margin-bottom: 12px;
 }
@@ -63,6 +67,7 @@ h3 {
   padding: 8px;
   margin-top: 12px;
   margin-bottom: 12px;
+  border-left: #293241 solid 1px;
 }
 
 .centered {
@@ -70,5 +75,3 @@ h3 {
   justify-content: center;
   margin-bottom: 16px;
 }
-
-

@@ -65,9 +65,9 @@
   </div>
 </div>
 
-<div class="container">
+<div class="rest-body">
   <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * @restaurant.user_rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - @restaurant.user_rating) %></p>
-  <p class="sc-italics d-flex">
+  <p class="sc-italics d-flex", style:'width:100%;'>
     <span class="badge badge-info"><%= @restaurant.area%> </span>
     <span class="badge badge-info mg-left"><%= @restaurant.atmosphere %></span>
     <span class="badge badge-info mg-left"><%= @restaurant.food_philosophy %></span>
@@ -82,7 +82,7 @@
   </div>
 
   <div class="centered">
-    <%=link_to "Book now!", restaurant_path, class:'button-big' %>
+    <%=link_to "Book now!", restaurant_path, class:'button-big', style:'color:white; font-weight:bold; width:100%; padding-top:16px; margin-top:16px;' %>
   </div>
 
   <h3> Address </h3>
