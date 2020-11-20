@@ -1,29 +1,7 @@
-li {
-  list-style-type: none;
-}
-
-.sc-italics {
-  text-decoration: italic;
-  font-variant: small-caps;
-}
-
-
-li a {
-  text-decoration: italic;
-  color:#98C1D9;
-
-}
-
-li a:hover {
-  background-color: #293241;
-  text-decoration: none;
-  color:white;
-
-}
 .card-trip {
   overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // background: white;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 30px;
 }
 
@@ -54,6 +32,10 @@ li a:hover {
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  color: black;
+} h2, li {
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .card-trip-infos .card-trip-user {
@@ -69,8 +51,11 @@ li a:hover {
 
 .index {
   margin-top: 30px;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .header {
   margin-bottom: 30px;
 }
+
