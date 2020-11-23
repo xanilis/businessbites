@@ -45,10 +45,11 @@ Restaurant.create!(
                 as well as other celebrated international references.",
   photo: "belcanto1.jpg, belcanto2.jpg, belcanto3.jpg, belcanto4.jpg, belcanto5.jpg",
   food_style_list: "Portuguese".capitalize,
-  atmosphere_list: "exclusive".capitalize,
+  atmosphere_list: "luxurious".capitalize,
   area_list: "chiado".capitalize,
   food_philosophy_list: "haute-cuisine".titleize,
   extra_list: "extensive wine list".titleize,
+  suitable_for_list: "One2One".capitalize,
   user_rating: 5,
   favorite_id: Favorite.all.sample.id,
 )
@@ -65,10 +66,11 @@ puts "Seeding 10 random restaurants"
     description: Faker::Restaurant.description,
     photo: "",
     food_style_list: ["Japanese","Fusion","Latin","Portuguese","Spanish","French","Italian"].sample.capitalize,
-    atmosphere_list: ["Calm","Formal","Casual","Quiet","Upscale","luxurious","exclusive","romantic"].sample.capitalize,
+    atmosphere_list: ["Calm","Formal","Casual","luxurious"].sample.capitalize,
     area_list: ["chiado","bairro alto","alfama","cascais","oeiras","carcavelos","belém","baixa","rossio","Alcântara","Príncipe Real","Parque das Nações"].sample.capitalize,
-    food_philosophy_list: ["vegan","vegetarian","seafood","traditional","modern","fusion","local","experimential","haute-cuisine"].sample.capitalize,
+    food_philosophy_list: ["vegan","vegetarian","seafood","traditional","modern","local","experimential","haute-cuisine"].sample.capitalize,
     extra_list: ["extensive wine list","amuse-bouche","live music"].sample.capitalize,
+    suitable_for_list: ["One2One","Small Groups","Big Groups"].sample.capitalize,
     user_rating: rand(1..5),
     favorite_id: Favorite.all.sample.id
   )

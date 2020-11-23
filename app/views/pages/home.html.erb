@@ -2,24 +2,7 @@
   <h1 id="welcome">WELCOME</h1>
   <h4>discover the best restaurants</h4>
 
-  <div class="first-question">
-    <h3>Please choose a date</h3>
-
-    <hr>
-
-    <p>We want to make sure that we show you only available restaurants.</p>
-
-    <div class="container-form-date">
-      <%= simple_form_for restaurants_path, method: :get do |f| %>
-        <%= f.input :date, html5:true, as: :date %>
-        <%= link_to root_path(anchor: 'question_2') do %>
-          <%= f.button :submit, 'Confirm Date', class: "button-big", id: "button-form" %>
-        <% end %>
-        <%= link_to 'Skip this', restaurants_path, class: "skip" %>
-      <% end %>
-    </div>
-  </div>
-
+<% unless params["/"] %>
 <div id="question_2">
 <div class="second-question" >
   <h3>I am looking for...</h3>
@@ -30,19 +13,17 @@
 
 
   <div class="container-form-groupsize">
-    <%= simple_form_for restaurants_path, method: :get do |f| %>
-      <%= link_to root_path(anchor: 'question_3') do %>
-        <%= f.button :submit, 'One2One', class: "button-big", id: "button-form" %>
-        <%= f.button :submit, 'Small Group', class: "button-big", id: "button-form" %>
-        <%= f.button :submit, 'Big group or event', class: "button-big", id: "button-form" %>
-      <% end %>
+    <%= simple_form_for root_path, method: :get do |f| %>
+      <%= f.input :suitable_fors, label: "Suitable for", collection: $suitable_fors, as: :check_boxes %>
+      <%= f.button :submit, 'Submit', class: "button-big", id: "button-form" %>
       <%= link_to 'Skip this', restaurants_path, class: "skip" %>
     <% end %>
   </div>
 </div>
 </div>
+<% end %>
 
-
+<% if params["/"] && params["/"]["suitable_fors"] %>
 <div id="question_3" class="third-question">
   <h3>Atmosphere</h3>
 
@@ -52,12 +33,16 @@
 
 
   <div class="container-form-groupsize">
-    <%= simple_form_for restaurants_path, method: :get do |f| %>
-      <%= f.button :submit, 'Casual', class: "button-big", id: "button-form" %>
-      <%= f.button :submit, 'Formal', class: "button-big", id: "button-form" %>
-      <%= f.button :submit, 'Luxurious', class: "button-big", id: "button-form" %>
+    <%= simple_form_for :restaurants, url: restaurants_path, method: :get do |f| %>
+     <%= f.input :atmospheres, label: "Atmosphere", collection: $atmospheres, as: :check_boxes  %>
+     <%= f.input :suitable_fors, input_html: {value: params["/"]["suitable_fors"].last}  %>
+      <%#= f.button :submit, 'Casual', class: "button-big", id: "button-form" %>
+      <%#= f.button :submit, 'Formal', class: "button-big", id: "button-form" %>
+      <%#= f.button :submit, 'Luxurious', class: "button-big", id: "button-form" %>
+      <%= f.button :submit, 'Submit', class: "button-big", id: "button-form" %>
       <%= link_to 'Skip this', restaurants_path, class: "skip" %>
     <% end %>
   </div>
 </div>
+<% end %>
 
