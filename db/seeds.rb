@@ -78,7 +78,7 @@ end
 
 puts "Seeding 10 random reviews.."
 
-10.times do
+100.times do
   Review.create!(
    description: Faker::Restaurant.review,
    title: Faker::Hipster.sentence,
