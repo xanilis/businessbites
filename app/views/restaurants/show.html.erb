@@ -11,20 +11,30 @@
 
 <div class="container pos-desc">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <% path = @restaurant.photo %>
+  <% photo_path_array = path.split(/,/) %>
+
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+      
+      <%if photo_path_array.drop(1).present? %>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <%end%>
+
+      <%if photo_path_array.drop(2).present? %>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      <%end%>
+
+      <%if photo_path_array.drop(3).present? %>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+      <%end%>
+
+      <%if photo_path_array.drop(4).present? %>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+      <%end%>
     </ol>
 
     <div class="carousel-inner">
-      <% path = @restaurant.photo %>
-      <% unless path.empty? %>
-      <% photo_path_array = path.split(/,/) %>
-      <% end %>
-
       <div class="carousel-item active">
         <% unless @restaurant.photo.empty?%>
           <%= image_tag("#{photo_path_array[0].strip}", class:"d-block w-100 cr-format")%>
@@ -55,37 +65,61 @@
   </div>
 </div>
 
-<div class="container">
+<div class="rest-body">
   <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * @restaurant.user_rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - @restaurant.user_rating) %></p>
+
   <p class="sc-italics d-flex">
-    <span class="badge badge-info"><%= @restaurant.area%> </span>
-    <span class="badge badge-info mg-left"><%= @restaurant.atmosphere %></span>
-    <span class="badge badge-info mg-left"><%= @restaurant.food_philosophy %></span>
-    <span class="badge badge-info mg-left"><%= @restaurant.extras %></span>
-    <span class="badge badge-info mg-left"><%= @restaurant.food_style%></span>
+    <span class="badge badge-info"><%= @restaurant.area_list %> </span>
+    <span class="badge badge-info mg-left"><%= @restaurant.atmosphere_list %></span>
+    <span class="badge badge-info mg-left"><%= @restaurant.food_philosophy_list %></span>
+    <span class="badge badge-info mg-left"><%= @restaurant.extra_list %></span>
+    <span class="badge badge-info mg-left"><%= @restaurant.food_style_list %></span>
   </p>
 
   <h3> Details </h3>
 
-  <div class="text-cont">
-    <p><%=@restaurant.description%></p>
+  <div class="card-deck inline">
+    <div class="card">
+      <div class="card-body">
+        <p><%=@restaurant.description%></p>
+      </div>
+    </div>
   </div>
 
   <div class="centered">
-    <button class="button-big">Book now!</button>
+    <%=link_to "Book now!", restaurant_path, class:'button-big', style:'color:white; font-weight:bold; width:100%; padding-top:16px; margin-top:16px;' %>
   </div>
 
   <h3> Address </h3>
 
-  <div class="address">
-    <p><%=@restaurant.address%></p>
+  <div class="card-deck inline">
+    <div class="card">
+      <div class="card-body">
+        <p><%=@restaurant.address%></p>
+      </div>
+    </div>
   </div>
 
   <h3> Reviews </h3>
 
-  <div class="container">
+  <div class="rev-cont">
 
+    <p><%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %></p>
+
+      <% @restaurant.reviews.each do |review| %>
+          <div class="card-deck inline">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><%=review.title%></h5>
+                <p> <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * review.rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - review.rating) %></p>
+                <p class="card-text"><%=review.description%></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Review by <%=review.user.email%></small>
+              </div>
+            </div>
+          </div>
+      <% end %>
   </div>
-
 
 </div>
