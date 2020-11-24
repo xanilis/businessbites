@@ -1,9 +1,9 @@
 <div class="form-in">
   <div class="search">
-    <%= form_tag restaurants_path, method: :get  %>
-  </div>
-    <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: 'Cuisines, restaurants and ratings' %>
-  <%= button_tag(type: "submit") do %>
+    <%= form_tag restaurants_path, method: :get , class: "d-flex" %>
+    <%= text_field_tag :query, params[:query], class: 'form-control flex-grow-1', placeholder: 'Cuisines, restaurants and ratings' %>
+    <%= button_tag(type: "submit") do %>
     <i class="fas fa-search"></i>
-  <% end %>
+    <% end %>
+</div>
 </div>
