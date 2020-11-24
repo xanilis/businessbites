@@ -1,5 +1,5 @@
 .search {
- width: 80%;
+ width: 100%;
 
 }
 
@@ -10,4 +10,25 @@
 
 .form-in {
   display: flex;
+}
+
+.order-2 {
+
+  color: black;
+}
+
+.fa-filter {
+  color:#3C896D;
+}
+
+.form-control {
+  border-radius: 10px;
+}
+
+.search-custom {
+  display: flex;
+  justify-content: space-between;
+}
+#search-bar {
+  flex-grow: 4;
 }
