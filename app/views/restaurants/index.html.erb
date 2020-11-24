@@ -1,12 +1,12 @@
 <div class="index">
-<<<<<<< HEAD
  <!--  <div class="header">
             <h3>Discover</h3>
           </div> -->
   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
-  Search
-</button>
+<%= link_to "#",  data: { toggle: 'modal', target: '#exampleModalLong'}  do %>
+<i class="fas fa-sliders-h"></i>
+<% end %>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -38,48 +38,6 @@
                   <%= f.submit "Search", class: "btn btn-primary m" %>
                   <%= link_to "Reset", restaurants_path  %>
                 <% end %>
-=======
-  <div>
-    <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <%= simple_form_for :search, url: restaurants_path, method: :get do |f| %>
-        <%= f.input :food_styles, label: "Food Style",  collection: $food_styles, as: :select %>
-        <%= f.input :atmospheres, label: "Atmosphere", collection: $atmospheres, as: :select  %>
-        <%= f.input :areas, label: "Neighborhood", collection: $areas, as: :select  %>
-        <%= f.input :food_philosophys, label: "Food Philosphy", collection: $food_philosophys, as: :select  %>
-        <%= f.input :extras, label: "Extras", collection: $extras, as: :select  %>
-        <%= f.input :suitable_fors, label: "Suitable for", collection: $suitable_fors, as: :select %>
-        <%= f.submit "Search", class: "btn btn-primary m" %>
-        <%= link_to "Reset", restaurants_path  %>
-      <% end %>
-    </div>
-  </div>
-
-    <div class="header">
-      <h3>Discover</h3>
-    </div>
-    <div class="search">
-      <%= render "components/search_bar" %>
-    </div>
-
-  <ul class= "restaurantlist">
-    <%@restaurants.each do |restaurant| %>
-      <%= link_to restaurant_path(restaurant) do %>
-        <div class="card-trip">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" />
-            <div class="card-trip-infos">
-              <div>
-                <h2><strong><%=restaurant.name%></strong></h2>
-                  <li class="sc-italics">
-                    <%= restaurant.food_style_list%> |
-                    <%= restaurant.atmosphere_list %> |
-                    <%= restaurant.food_philosophy_list %> |
-                    <%= restaurant.extra_list %> |
-                    <%= restaurant.suitable_for_list %>
-
-                  </li>
-                <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * restaurant.user_rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - restaurant.user_rating) %></p>
->>>>>>> 15a7e25bd66370b3e2339514d849e54f3393729c
               </div>
             </div>
           </div>
@@ -111,11 +69,6 @@
           </div>
       </div>
     <% end %>
-<<<<<<< HEAD
   <% end %>
 </ul>
-=======
-  </ul>
-</div>
 
->>>>>>> 15a7e25bd66370b3e2339514d849e54f3393729c

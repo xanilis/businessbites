@@ -3,12 +3,7 @@
     <%= form_tag restaurants_path, method: :get  %>
   </div>
     <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: 'Cuisines, restaurants and ratings' %>
-    <%= submit_tag "GO" %>
+  <%= button_tag(type: "submit") do %>
+    <i class="fas fa-search"></i>
+  <% end %>
 </div>
-
-
-
-
-
-
-
