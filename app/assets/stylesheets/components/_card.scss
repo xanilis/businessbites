@@ -3,6 +3,7 @@
   // background: white;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 30px;
+  box-shadow: 2px 2px 8px #888888;
 }
 
 .card-trip > img {
@@ -57,5 +58,6 @@
 
 .header {
   margin-bottom: 30px;
+  display: flex;
 }
 
