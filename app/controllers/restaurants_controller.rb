@@ -4,6 +4,7 @@ class RestaurantsController < ApplicationController
       if params[:restaurants][:atmospheres].present?
         @restaurants = Restaurant.tagged_with(params[:restaurants][:atmospheres].last)
 
+
     elsif params[:restaurants][:suitable_fors].present?
       @restaurants = Restaurant.tagged_with(params[:restaurants][:atmospheres].last)
       @restaurants = @restaurants + Restaurant.tagged_with(params[:restaurants][:suitable_fors].last)

@@ -1,13 +1,14 @@
 .footer {
-  background: #98C1D9;
+  background: #293241;
   align-items: center;
   height: 200px;
   padding: 0px 50px;
-  color: #293241;
+  color: #98C1D9;
   justify-content: center;
   display: flex;
   flex-direction: column;
   font-family: $body-font;
+  width: 100% !important;
 }
 
 .footer p {
@@ -23,9 +24,9 @@
 }
 
 .footer-links a{
-  color: #293241;
+  color: #98C1D9;
   text-decoration: underline;
-  font-size: 18px;
+  font-size: 16px;
   padding: 0px 14px;
 }
 
@@ -36,7 +37,7 @@
 }
 
 .footer-social a{
-  color: #293241;
+  color: #98C1D9;
   text-decoration: none;
   font-size: 18px;
   padding: 4px 14px;
@@ -47,7 +48,7 @@
 }
 
 .footer-copyright {
-  color: #293241;
+  color: #98C1D9;
   text-decoration: none;
   font-size: 14px;
   padding: 0px 10px;

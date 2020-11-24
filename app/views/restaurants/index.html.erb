@@ -3,12 +3,12 @@
     <div class="row">
     <div class="col-xs-12 col-sm-4">
       <%= simple_form_for :search, url: restaurants_path, method: :get do |f| %>
-        <%= f.input :food_styles, label: "Food Style",  collection: $food_styles, as: :check_boxes %>
-        <%= f.input :atmospheres, label: "Atmosphere", collection: $atmospheres, as: :check_boxes  %>
-        <%= f.input :areas, label: "Neighborhood", collection: $areas, as: :check_boxes  %>
-        <%= f.input :food_philosophys, label: "Food Philosphy", collection: $food_philosophys, as: :check_boxes  %>
-        <%= f.input :extras, label: "Extras", collection: $extras, as: :check_boxes  %>
-        <%= f.input :suitable_fors, label: "Suitable for", collection: $suitable_fors, as: :check_boxes  %>
+        <%= f.input :food_styles, label: "Food Style",  collection: $food_styles, as: :select %>
+        <%= f.input :atmospheres, label: "Atmosphere", collection: $atmospheres, as: :select  %>
+        <%= f.input :areas, label: "Neighborhood", collection: $areas, as: :select  %>
+        <%= f.input :food_philosophys, label: "Food Philosphy", collection: $food_philosophys, as: :select  %>
+        <%= f.input :extras, label: "Extras", collection: $extras, as: :select  %>
+        <%= f.input :suitable_fors, label: "Suitable for", collection: $suitable_fors, as: :select %>
         <%= f.submit "Search", class: "btn btn-primary m" %>
         <%= link_to "Reset", restaurants_path  %>
       <% end %>
@@ -45,3 +45,5 @@
       <% end %>
     <% end %>
   </ul>
+</div>
+
