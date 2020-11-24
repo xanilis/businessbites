@@ -1,6 +1,9 @@
 class Restaurant < ApplicationRecord
   has_many :reviews
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   acts_as_taggable_on :food_styles
   acts_as_taggable_on :atmospheres
   acts_as_taggable_on :areas
