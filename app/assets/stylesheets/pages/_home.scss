@@ -2,53 +2,42 @@
 
 #welcome{
   font-family: $headers-font;
-  font-size: 42px;
-  color: #293241;
+  font-size: 44px;
+  color: #E0FBFC;
   text-align: center !important;
-  margin-top: 80px !important;
+  margin-top: 75px !important;
   padding-bottom: 0;
   margin-bottom: 0;
 }
 
 h4 {
   font-family: body-font;
-  font-size: 18px;
+  font-size: 20px;
   color: #3C896D;
   text-align: center;
   margin-top: 0;
   padding-top: 0;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
 
 .first-question {
-  height: 100vh;
   margin: 16px;
   padding: 16px;
   text-align: center;
 }
+
 
 .second-question {
-  height: 100vh;
   margin: 16px;
   padding: 16px;
   text-align: center;
 }
 
-.third-question {
-  height: 100vh;
-  margin: 16px;
-  padding: 16px;
-  text-align: center;
-}
-
-.container-form-date {
-  text-align: left;
-  margin-top: 26px;
-}
 
 .container-form-groupsize {
   text-align: center;
+  margin-top: 20px;
 }
 
 
@@ -58,26 +47,42 @@ h4 {
   justify-content: center;
   align-items: center;
   color: #E0FBFC;
+  background-color: #3C896D;
   margin: 18px 0;
-  padding: 16px;
+  padding: 14px;
+  font-size: 20px;
 }
 
 .skip {
   display: flex;
   text-align: right;
-  color: #293241;
+  color: #E0FBFC;
   text-decoration: underline;
+  font-size: 16px;
+}
+
+.check_boxes {
+  font-family: $headers-font;
+  color: #E0FBFC;
+  font-size: 20px;
+}
+
+.form-check {
+padding: 10px;
+}
+
+.bg-img {
+  background-image: url(bg-dark.jpg);
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
 }
 
 
-
-
-
-
-
-
-
-
+.col-form-label {
+  font-size: 28px;
+  font-weight: bolder;
+}
 
 
 
