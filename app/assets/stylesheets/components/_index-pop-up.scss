@@ -71,6 +71,9 @@
 .me {
   background-color: #3C896D;
   border-color: #3C896D;
+  border-radius: 45px;
+  padding-right: 80px;
+  padding-left: 80px;
 }
 
 .search_food_styles legend {
@@ -96,4 +99,19 @@
 .search_extras legend {
   color: black;
   font-size: 18px;
+}
+
+.border-footer {
+  border-top: 1px solid #dee2e6;
+  padding-top: 16px;
+}
+
+.modal-footer {
+  border: 0px solid #dee2e6;
+}
+
+#confirm-cancel {
+  border-radius: 45px;
+  padding-left: 35px;
+  padding-right: 35px;
 }
