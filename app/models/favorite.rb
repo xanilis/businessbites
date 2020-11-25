@@ -2,5 +2,5 @@
 
 class Favorite < ApplicationRecord
   belongs_to :user
-  has_many :restaurants
+  belongs_to :restaurant
 end

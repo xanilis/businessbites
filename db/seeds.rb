@@ -1,7 +1,7 @@
 puts "destroying all entries... :("
 Review.destroy_all
-Restaurant.destroy_all
 Favorite.destroy_all
+Restaurant.destroy_all
 User.destroy_all
 
 puts "DB emptied! :)"
@@ -42,8 +42,7 @@ Restaurant.create!(
   food_philosophy_list: "haute-cuisine".titleize,
   extra_list: "extensive wine list".titleize,
   suitable_for_list: "One2One".capitalize,
-  user_rating: 5,
-  favorite_id: Favorite.all.sample.id,
+  user_rating: 5
 )
 
 puts "Belcanto created."
@@ -63,8 +62,7 @@ puts "Seeding 10 random restaurants"
     food_philosophy_list: ["vegan","vegetarian","seafood","traditional","modern","local","experimential","haute-cuisine"].sample.capitalize,
     extra_list: ["extensive wine list","amuse-bouche","live music"].sample.capitalize,
     suitable_for_list: ["One2One","Small Groups","Big Groups"].sample.capitalize,
-    user_rating: rand(1..5),
-    favorite_id: Favorite.all.sample.id
+    user_rating: rand(1..5)
   )
   puts "Created restaurant #{Restaurant.count} "
 end

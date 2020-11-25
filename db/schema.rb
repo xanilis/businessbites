@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_25_170450) do
+ActiveRecord::Schema.define(version: 2020_11_25_172510) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,10 +34,8 @@ ActiveRecord::Schema.define(version: 2020_11_25_170450) do
     t.text "description"
     t.string "photo"
     t.integer "user_rating"
-    t.bigint "favorite_id", null: false
     t.float "latitude"
     t.float "longitude"
-    t.index ["favorite_id"], name: "index_restaurants_on_favorite_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -94,7 +92,6 @@ ActiveRecord::Schema.define(version: 2020_11_25_170450) do
 
   add_foreign_key "favorites", "restaurants"
   add_foreign_key "favorites", "users"
-  add_foreign_key "restaurants", "favorites"
   add_foreign_key "reviews", "restaurants"
   add_foreign_key "reviews", "users"
   add_foreign_key "taggings", "tags"
