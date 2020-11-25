@@ -66,12 +66,18 @@ h3 {
 .address {
   padding: 8px;
   margin-top: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   border-left: #293241 solid 1px;
 }
 
 .centered {
   display: flex;
   justify-content: center;
+  margin-bottom: 16px;
+}
+
+#map {
+  border: 0.5px solid #293241;
+  margin-top: 0;
   margin-bottom: 16px;
 }

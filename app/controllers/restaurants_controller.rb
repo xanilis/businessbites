@@ -20,15 +20,19 @@ class RestaurantsController < ApplicationController
       @restaurants = Restaurant.all
     end
 
-    @markers = @restaurants.geocoded.map do |flat|
+    @markers = @restaurants.geocoded.map do |restaurant|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: restaurant.latitude,
+        lng: restaurant.longitude
       }
     end
   end
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @marker = {
+        lat: @restaurant.latitude,
+        lng: @restaurant.longitude
+      }
   end
 end
