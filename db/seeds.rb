@@ -76,7 +76,8 @@ restaurants.each do |restaurant|
     extra_list: ["extensive wine list","amuse-bouche","live music"].sample.capitalize,
     suitable_for_list: ["One2One","Small Groups","Big Groups"].sample.capitalize,
     user_rating: rand(1..5),
-    favorite_id: Favorite.all.sample.id
+    favorite_id: Favorite.all.sample.id,
+    link: restaurant["url"]
   )
   puts "Created restaurant #{Restaurant.count} "
 end
