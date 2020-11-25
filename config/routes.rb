@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [] do
     resources :favorites, only: [:edit, :update]
+    resources :reviews, only: [:index]
   end
 
   resources :favorites, only: :destroy
