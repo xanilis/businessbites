@@ -8,11 +8,6 @@
         <i class="fas fa-filter "></i>
       <% end %>
     </div>
-<<<<<<< HEAD
-=======
-    <!-- Modal -->
->>>>>>> 387b788d85df16c5e1e70df4e1c5cb5dd8951196
-  </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -47,46 +42,37 @@
           </div>
         </div>
       </div>
-<<<<<<< HEAD
       <div class="modal-footer">
       </div>
     </div>
-</div>
-=======
-    </div>
-
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary">Save changes</button>
-    </div>
+  </div>
 
   <div id="map"
     style="width: 100%; height: 300px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
->>>>>>> 387b788d85df16c5e1e70df4e1c5cb5dd8951196
-<ul class= "restaurantlist">
-  <%@restaurants.each do |restaurant| %>
-    <%= link_to restaurant_path(restaurant) do %>
-      <div class="card-trip">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" />
-          <div class="card-trip-infos">
-            <div>
-              <h2><strong><%=restaurant.name%></strong></h2>
-                <li class="sc-italics">
-                  <%= restaurant.food_style_list%> |
-                  <%= restaurant.atmosphere_list %> |
-                  <%= restaurant.food_philosophy_list %> |
-                  <%= restaurant.extra_list %>
-                </li>
-              <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * restaurant.user_rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - restaurant.user_rating) %></p>
-            </div>
-          </div>
-      </div>
-    <% end %>
-  <% end %>
-</ul>
-
 </div>
+  <ul class= "restaurantlist">
+    <%@restaurants.each do |restaurant| %>
+      <%= link_to restaurant_path(restaurant) do %>
+        <div class="card-trip">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" />
+            <div class="card-trip-infos">
+              <div>
+                <h2><strong><%=restaurant.name%></strong></h2>
+                  <li class="sc-italics">
+                    <%= restaurant.food_style_list%> |
+                    <%= restaurant.atmosphere_list %> |
+                    <%= restaurant.food_philosophy_list %> |
+                    <%= restaurant.extra_list %>
+                  </li>
+                <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * restaurant.user_rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - restaurant.user_rating) %></p>
+              </div>
+            </div>
+        </div>
+      <% end %>
+    <% end %>
+  </ul>
+
+
