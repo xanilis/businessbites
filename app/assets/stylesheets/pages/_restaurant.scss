@@ -14,7 +14,7 @@ h1 {
 
 h3 {
   color: #21295C;
-  font-size: 18px; 
+  font-size: 18px;
   padding: 8px 0px;
 }
 
@@ -38,7 +38,7 @@ h3 {
 }
 
 .span {
-  margin: 0px; 
+  margin: 0px;
   padding: 0px;
 }
 
@@ -66,7 +66,7 @@ h3 {
 .address {
   padding: 8px;
   margin-top: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   border-left: #293241 solid 1px;
 }
 
@@ -76,6 +76,11 @@ h3 {
   margin-bottom: 16px;
 }
 
+#map {
+  border: 0.5px solid #293241;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
 
 // Popup CSS
 
