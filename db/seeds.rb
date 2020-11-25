@@ -19,14 +19,6 @@ end
 
 puts "Seeding 10 random favorite restaurant lists.."
 
-10.times do
-  Favorite.create!(
-    title: Faker::Coffee.blend_name,
-    status: false,
-    user: User.all.sample
-  )
-  puts "Created favorite list #{Favorite.count}"
-end
 
 puts "Seeding Belcanto"
 
