@@ -1,9 +1,9 @@
 .card-trip {
   overflow: hidden;
-  // background: white;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-bottom: 30px;
-  // box-shadow: 2px 2px 8px #888888;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  padding-bottom: 16px;
+  margin-bottom: 22px;
+  border-radius: 10px;
 }
 
 .card-trip > img {
@@ -50,12 +50,8 @@
 
 .restaurantlist {
   padding-left: 0px;
-}
+  margin: 0px 20px;
 
-.index {
-  margin-top: 30px;
-  margin-left: 16px;
-  margin-right: 16px;
 }
 
 .header {
@@ -63,12 +59,14 @@
   display: flex;
 }
 
-.restaurantlist {
-  margin: 0px 20px;
-
+.restaurantlist img {
+  border-radius: 10px;
 }
 
-.restaurantlist img {
-  border-radius: 15px;
-
+.restaurantlist-container {
+  padding-top: 25px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: white;
+  z-index: 9;
 }

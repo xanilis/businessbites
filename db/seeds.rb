@@ -48,7 +48,7 @@ Restaurant.create!(
                 welcoming and discreet service, and an extraordinary wine selection
                 that showcases some of the best Portuguese wines
                 as well as other celebrated international references.",
-  photo: "belcanto1.jpg, belcanto2.jpg, belcanto3.jpg, belcanto4.jpg, belcanto5.jpg",
+  photo: ["belcanto1.jpg, belcanto2.jpg, belcanto3.jpg, belcanto4.jpg, belcanto5.jpg"],
   food_style_list: "Portuguese".capitalize,
   atmosphere_list: "luxurious".capitalize,
   area_list: "chiado".capitalize,
