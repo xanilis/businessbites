@@ -1,7 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: #293241;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
   font-family: $headers-font;
 }
 
@@ -18,4 +17,8 @@
 #text {
   color: #98C1D9;
   font-weight: lighter;
+}
+
+.margin-nav {
+  margin: 0 !important;
 }
