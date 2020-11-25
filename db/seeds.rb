@@ -62,7 +62,7 @@ puts "Seeding 10 random restaurants"
 10.times do
   Restaurant.create!(
     name: Faker::Restaurant.name,
-    address: Faker::Address.street_address,
+    address: Faker::Address.full_address,
     description: Faker::Restaurant.description,
     photo: "",
     food_style_list: ["Japanese","Fusion","Latin","Portuguese","Spanish","French","Italian"].sample.capitalize,

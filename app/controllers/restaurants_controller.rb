@@ -19,26 +19,20 @@ class RestaurantsController < ApplicationController
     else
       @restaurants = Restaurant.all
     end
+
+    @markers = @restaurants.geocoded.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude
+      }
+    end
   end
-
-  # def suitable
-  #   if params[:restaurants][:suitable_fors].present?
-  #      @restaurants = Restaurant.tagged_with(params[:restaurants][:suitable_fors].last)
-  #   else
-  #     @restaurants = Restaurant.all
-  #   end
-  # end
-
-  # def atmosphere
-  #   if params[:restaurants][:atmospheres].present?
-  #     @restaurants = Restaurant.tagged_with(params[:restaurants][:atmospheres].last)
-  #   else
-  #     @restaurants = Restaurant.all
-  #   end
-  # end
-
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @marker = [{
+        lat: @restaurant.latitude,
+        lng: @restaurant.longitude
+      }]
   end
 end
