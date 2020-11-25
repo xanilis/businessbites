@@ -1,20 +1,13 @@
 <div class="index">
-   <!--  <div class="header">
-              <h3>Discover</h3>
-            </div> -->
-    <!-- Button trigger modal -->
   <div class="search-custom">
     <div id="search-bar">
       <%= render "components/search_bar" %>
     </div>
-
     <div class="order-2">
       <%= link_to "#",  data: { toggle: 'modal', target: '#exampleModalLong'}  do %>
         <i class="fas fa-filter "></i>
       <% end %>
     </div>
-    <!-- Modal -->
-
   </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -30,7 +23,7 @@
             <div class="row">
               <div class="col-xs-12 col-sm-4">
                 <%= simple_form_for :search, url: restaurants_path, method: :get do |f| %>
-                  <%= f.input :food_styles, label: "Food Style",  collection: $food_styles, as: :check_boxes, input_html: { class: "tag-selector" },
+                  <%= f.input :food_styles, label: "Food Style",  collection: $food_styles, as: :check_boxes, input_html: { class: "tag-selector test" },
                   item_wrapper_class: "tag-item" %>
                   <%= f.input :atmospheres, label: "Atmosphere", collection: $atmospheres, as: :check_boxes, input_html: { class: "tag-selector" },
                   item_wrapper_class: "tag-item" %>
@@ -40,20 +33,17 @@
                   item_wrapper_class: "tag-item" %>
                   <%= f.input :extras, label: "Extras", collection: $extras, as: :check_boxes, input_html: { class: "tag-selector" },
                   item_wrapper_class: "tag-item" %>
-                  <%= f.submit "Search", class: "btn btn-primary m" %>
-                  <%= link_to "Reset", restaurants_path  %>
-                <% end %>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" id="confirm-cancel" data-dismiss="modal">Close</button>
+        <%= f.submit "Search", class: "btn btn-primary me" %>
+        <% end %>
       </div>
     </div>
-  </div>
 </div>
 <ul class= "restaurantlist">
   <%@restaurants.each do |restaurant| %>
