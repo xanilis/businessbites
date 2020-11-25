@@ -8,7 +8,7 @@
 
   <div class="container-form-groupsize">
     <%= simple_form_for root_path, method: :get do |f| %>
-      <%= f.input :suitable_fors, label: "I planning on a...", collection: @suitable_fors, as: :check_boxes, class: 'onboarding' %>
+      <%= f.input :suitable_fors, label: "I am planning for...", collection: @suitable_fors, as: :check_boxes, class: 'onboarding' %>
       <%= f.button :submit, 'Submit', class: "button-big", id: "button-form" %>
       <%= link_to 'Skip this', restaurants_path, class: "skip" %>
     <% end %>
