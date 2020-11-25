@@ -76,6 +76,33 @@
     <span class="badge badge-info mg-left"><%= @restaurant.food_style_list %></span>
   </p>
 
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Share
+  </button>
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Share <%=@restaurant.name%> with others</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="center-div">
+            <p class="sm-tag"> <%= link_to(image_tag("facebook.svg", size: "12px"), "https://www.facebook.com/sharer.php?u=https://businessbites.herokuapp.com/restaurants/#{@restaurant.id}")%> </p>
+            <p class="sm-tag"> <%= link_to(image_tag("gmail.svg", size: "12px"), "#")%> </p>
+            <p class="sm-tag"> <%= link_to(image_tag("linkedin.svg", size: "12px"), "#")%> </p>
+            <p class="sm-tag"> <%= link_to(image_tag("whatsapp.svg", size: "12px"), "https://wa.me/?text=https://businessbites.herokuapp.com/restaurants/#{@restaurant.id}")%> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <h3> Details </h3>
 
   <div class="card-deck inline">
