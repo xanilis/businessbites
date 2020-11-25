@@ -20,7 +20,7 @@ class RestaurantsController < ApplicationController
       @restaurants = Restaurant.all
     end
 
-    @markers = @restaurants.geocoded.map do |restaurant|
+    @markers = @restaurants.map do |restaurant|
       {
         lat: restaurant.latitude,
         lng: restaurant.longitude
