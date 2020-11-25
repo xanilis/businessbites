@@ -10,12 +10,21 @@ h1 {
   color: #21295C;
   margin-top: 0px !important;
   text-align: left !important;
+  margin-bottom: 0px;
 }
 
 h3 {
   color: #21295C;
   font-size: 18px;
   padding: 8px 0px;
+  margin-bottom: 4px;
+}
+
+p a{
+  text-decoration: none;
+  color: #3C896D;
+  padding-left: 3px;
+  justify-content: space-between;
 }
 
 .breadcrumb {
@@ -46,8 +55,20 @@ h3 {
   padding-top: 4px;
 }
 
+#email {
+  font-size: 14px;
+  color: #3C896D;
+  padding-top: 4px;
+  background-color: transparent;
+}
+
 .mg-left {
   margin-left: 8px;
+}
+
+.icon {
+  height: 32px;
+  border-radius: 50%;
 }
 
 .badge {
@@ -74,6 +95,18 @@ h3 {
   display: flex;
   justify-content: center;
   margin-bottom: 16px;
+}
+
+.card {
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+}
+
+.card-trip p {
+  font-size: 16px;
+  opacity: 1;
+  margin: 0px;
 }
 
 #map {
@@ -157,7 +190,7 @@ h3 {
 }
 
 .center-div {
-  margin-left: 180px;
+  margin-left: 130px;
 }
 
 .sm-tag {
@@ -169,15 +202,8 @@ h3 {
   text-align: left;
 }
 
-p a{
-  text-decoration: none;
-  color: #3C896D;
-  padding-left: 3px;
-  justify-content: space-between;
-}
 
 .nxt-each {
-
   display: flex;
   justify-content: space-between;
 }
