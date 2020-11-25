@@ -149,6 +149,7 @@ h3 {
 
 .modal-title {
   border-radius: 420px;
+  text-align: center;
 }
 
 .col-form-label {
@@ -156,12 +157,36 @@ h3 {
 }
 
 .center-div {
-  display: flex;
-  justify-content: space-between;
-  margin-right: auto;
-  text-align: center;
+  margin-left: 180px;
 }
 
 .sm-tag {
-  padding-top: 12px;
+  padding-bottom: 16px;
+}
+
+.align-left {
+  align-items: left;
+  text-align: left;
+}
+
+p a{
+  text-decoration: none;
+  color: #3C896D;
+  padding-left: 3px;
+  justify-content: space-between;
+}
+
+.nxt-each {
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.share-btn {
+  border: none;
+  text-decoration: underline;
+  color: black; 
+  background-color: transparent;
+  margin-bottom: 0px;
+  padding-right: 8px;
 }
