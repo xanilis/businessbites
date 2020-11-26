@@ -103,6 +103,10 @@ p a{
   border-radius: 8px;
 }
 
+.card-trip {
+  padding: 8px;
+}
+
 .card-trip p {
   font-size: 16px;
   opacity: 1;
@@ -111,7 +115,18 @@ p a{
 
 #map {
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-bottom: 16px;
 }
+
+.button-big a {
+  color: #E0FBFC !important;
+  text-decoration: none;
+  font-family: $headers-font;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+
 
 // Popup CSS
 

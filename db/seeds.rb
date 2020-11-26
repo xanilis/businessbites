@@ -40,7 +40,7 @@ Restaurant.create!(
                 welcoming and discreet service, and an extraordinary wine selection
                 that showcases some of the best Portuguese wines
                 as well as other celebrated international references.",
-  photo: ["belcanto1.jpg, belcanto2.jpg, belcanto3.jpg, belcanto4.jpg, belcanto5.jpg"],
+  photo: "localbelcanto1.jpg, localbelcanto2.jpg, localbelcanto3.jpg, localbelcanto4.jpg, localbelcanto5.jpg",
   food_style_list: "Portuguese".capitalize,
   atmosphere_list: "luxurious".capitalize,
   area_list: "chiado".capitalize,
@@ -52,6 +52,25 @@ Restaurant.create!(
 
 puts "Belcanto created."
 
+puts "Seeding EPUR"
+
+Restaurant.create!(
+  name: "EPUR",
+  address: "Largo da Academia Nacional de Belas Artes 14",
+  description: "There’s a heaven inside each body, hidden in every palate. In it there is a universe waiting to be dazzled by unknown ‘ingre-details’.",
+  photo: "localepur1.jpg, localepur2.jpg, localepur3.jpg, localepur4.jpg, localepur5.jpg",
+  food_style_list: "fusion".capitalize,
+  atmosphere_list: "luxurious".capitalize,
+  area_list: "alfama".capitalize,
+  food_philosophy_list: "haute-cuisine".titleize,
+  extra_list: "extensive wine list".titleize,
+  suitable_for_list: "One2One".capitalize,
+  user_rating: 5,
+  favorite_id: Favorite.all.sample.id,
+)
+
+puts "EPUR created."
+
 
 puts "Seeding real restaurants"
 restaurants.each do |restaurant|
@@ -61,12 +80,13 @@ restaurants.each do |restaurant|
     description: Faker::Restaurant.description,
     photo: restaurant["image_url"],
     food_style_list: ["Japanese","Fusion","Latin","Portuguese","Spanish","French","Italian"].sample.capitalize,
-    atmosphere_list: ["Calm","Formal","Casual","luxurious"].sample.capitalize,
+    atmosphere_list: ["Calm","Formal","Casual","Luxurious"].sample.capitalize,
     area_list: ["chiado","bairro alto","alfama","cascais","oeiras","carcavelos","belém","baixa","rossio","Alcântara","Príncipe Real","Parque das Nações"].sample.capitalize,
     food_philosophy_list: ["vegan","vegetarian","seafood","traditional","modern","local","experimential","haute-cuisine"].sample.capitalize,
     extra_list: ["extensive wine list","amuse-bouche","live music"].sample.capitalize,
     suitable_for_list: ["One2One","Small Groups","Big Groups"].sample.capitalize,
-    user_rating: rand(1..5),
+    user_rating: rand(2..5),
+    favorite_id: Favorite.all.sample.id,
     link: restaurant["url"]
   )
   puts "Created restaurant #{Restaurant.count} "
@@ -97,6 +117,76 @@ puts "Seeding 10 random reviews.."
   )
   puts "Created review #{Review.count}"
 end
+
+puts "Seeding real looking Reviews for EPUR"
+
+  Review.create!(
+   description: Faker::Restaurant.review,
+   title: "Amazing food in a well-crafted atmosphere",
+   rating: rand(4..5),
+   restaurant: Restaurant.all.sample,
+   user: User.all.sample
+  )
+
+    Review.create!(
+   description: Faker::Restaurant.review,
+   title: "Clients loved it",
+   rating: rand(4..5),
+   restaurant: Restaurant.all.sample,
+   user: User.all.sample
+  )
+
+      Review.create!(
+   description: Faker::Restaurant.review,
+   title: "The Pork Belly is out of this world",
+   rating: rand(4..5),
+   restaurant: Restaurant.all.sample,
+   user: User.all.sample
+  )
+
+        Review.create!(
+   description: Faker::Restaurant.review,
+   title: "Amazing Christmas Company event with incredible food",
+   rating: rand(4..5),
+   restaurant: Restaurant.all.sample,
+   user: User.all.sample
+  )
+
+  puts "Done"
+
+  puts "Seeding real looking Reviews for Belcanto"
+
+  Review.create!(
+   description: Faker::Restaurant.review,
+   title: "Slick, elegant, luxurious",
+   rating: rand(4..5),
+   restaurant: Restaurant.all.sample,
+   user: User.all.sample
+  )
+
+    Review.create!(
+   description: Faker::Restaurant.review,
+   title: "I got promoted here - yay!",
+   rating: rand(4..5),
+   restaurant: Restaurant.all.sample,
+   user: User.all.sample
+  )
+
+    Review.create!(
+   description: Faker::Restaurant.review,
+   title: "Gorgeous food presentation, amazing wine",
+   rating: rand(4..5),
+   restaurant: Restaurant.all.sample,
+   user: User.all.sample
+  )
+
+    Review.create!(
+   description: Faker::Restaurant.review,
+   title: "Amazing food in a well-crafted atmosphere",
+   rating: rand(4..5),
+   restaurant: Restaurant.all.sample,
+   user: User.all.sample
+  )
 
 
 puts "Seeding completed. Well done."
