@@ -66,15 +66,22 @@ restaurants.each do |restaurant|
     food_philosophy_list: ["vegan","vegetarian","seafood","traditional","modern","local","experimential","haute-cuisine"].sample.capitalize,
     extra_list: ["extensive wine list","amuse-bouche","live music"].sample.capitalize,
     suitable_for_list: ["One2One","Small Groups","Big Groups"].sample.capitalize,
-<<<<<<< HEAD
-    user_rating: rand(1..5)
-=======
     user_rating: rand(1..5),
-    favorite_id: Favorite.all.sample.id,
     link: restaurant["url"]
->>>>>>> 5144897704151f8de8a56b1fc86ad7eaa2c2c972
   )
   puts "Created restaurant #{Restaurant.count} "
+end
+
+
+puts "Seeding 10 random favorite restaurant lists.."
+10.times do
+  Favorite.create!(
+    title: Faker::Coffee.blend_name,
+    status: false,
+    user: User.all.sample,
+    restaurant: Restaurant.all.sample,
+  )
+  puts "Created favorite list #{Favorite.count}"
 end
 
 
