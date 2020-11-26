@@ -3,6 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @suitable_fors = ["One2One", "Small Groups", "Big Groups"]
-    @atmospheres = ["Calm", "Formal", "Casual", "luxurious"]
+    @atmospheres = ["Calm", "Formal", "Casual", "Luxurious"]
   end
 end
