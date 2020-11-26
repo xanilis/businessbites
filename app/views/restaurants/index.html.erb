@@ -1,7 +1,15 @@
 <div class="index">
+  
+  <%@valid_markers = [] %>
+  <%@markers.each do |marker| %>
+    <%unless marker[:lat].nil?%>
+      <%@valid_markers << marker%>
+    <%end%>
+  <%end%>
+  
   <div class="map-index" id="map"
     style="width: 100%; height: 355px;"
-    data-markers="<%= @markers.to_json %>"
+    data-markers="<%= @valid_markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
@@ -14,7 +22,7 @@
         <i class="fas fa-filter"></i>
       <% end %>
     </div>
-    <!-- Modal -->
+
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -59,7 +67,11 @@
     <%@restaurants.each do |restaurant| %>
       <%= link_to restaurant_path(restaurant) do %>
         <div class="card-trip">
-            <img src= <%= restaurant.photo %> />
+          <%if restaurant.photo.include? "local"%> 
+            <%= image_tag("#{restaurant.photo.split(/,/)[0]}") %>
+          <%else%>
+            <img src= '<%= restaurant.photo %>'>
+          <%end%>
             <div class="card-trip-infos">
               <div>
                 <h2><strong><%=restaurant.name%></strong></h2>

@@ -9,7 +9,7 @@ class Restaurant < ApplicationRecord
   acts_as_taggable_on :suitable_for
 
   $food_styles = ["Japanese","Fusion","Latin","Portuguese","Spanish","French","Italian"]
-  $atmospheres = ["Calm","Formal","Casual","luxurious"]
+  $atmospheres = ["Calm","Formal","Casual","Luxurious"]
   $areas = ["Chiado","Bairro Alto","Alfama","Cascais","Oeiras","Carcavelos","Belém","Baixa","Rossio","Alcântara","Príncipe Real","Parque das Nações"]
   $food_philosophys = ["vegan","vegetarian","seafood","traditional","modern","fusion","local","experimential","haute-cuisine"]
   $extras = ["extensive wine list","amuse-bouche","live music"]

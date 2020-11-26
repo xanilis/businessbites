@@ -112,7 +112,7 @@
   </div>
 
   <div class="centered">
-    <%=link_to "Book now!", @restaurant.link, class:'button-big', style:'color:white; font-weight:bold; width:100%; padding-top:16px; margin-top:16px;' %>
+    <%=link_to "Book now!", @restaurant.link, class:'button-big', style:'color:white; font-weight:lighter; font-size: 20px; width:100%; padding-top:16px; margin-top:16px;' %>
   </div>
 
   <h3> Address & Map</h3>
@@ -130,10 +130,8 @@
 
   <h3> Reviews </h3>
 
-
-    <p><%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %></p>
-
   <div class="container">
+    <p><%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %></p>
     <% @restaurant.reviews.each do |review| %>
         <div class="card-trip">
           <h2 class="card-title"><%=review.title%></h2>
