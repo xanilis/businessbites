@@ -27,6 +27,11 @@ p a{
   justify-content: space-between;
 }
 
+#changecolor {
+  color: #293241 !important;
+}
+
+
 .breadcrumb {
 
   background-color: rgb(244,244,244);
@@ -117,15 +122,6 @@ p a{
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   margin-bottom: 16px;
 }
-
-.button-big a {
-  color: #E0FBFC !important;
-  text-decoration: none;
-  font-family: $headers-font;
-  font-weight: lighter;
-  font-size: 20px;
-}
-
 
 
 // Popup CSS

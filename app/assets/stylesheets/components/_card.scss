@@ -26,6 +26,15 @@
   position: 20px 50px 50px 50px;
 }
 
+.card-trip a:active {
+  text-decoration: none !important;
+  opacity: 0.7 !important;
+}
+
+.card-trip p:active {
+  text-decoration: none !important;
+  opacity: 0.7 !important;
+}
 
 .card-trip .card-trip-infos {
   padding: 16px;
@@ -36,7 +45,10 @@
   align-items: flex-end;
   position: relative;
   color: black;
-} h2, li {
+} 
+
+
+h2, li {
   text-decoration: none;
   list-style-type: none;
 }

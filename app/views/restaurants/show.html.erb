@@ -1,6 +1,6 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><%= link_to "Restaurants", restaurants_path%></li>
+    <li class="breadcrumb-item"><%= link_to "Restaurants", restaurants_path, id:'changecolor'%></li>
     <li class="breadcrumb-item active" aria-current="page"><%=@restaurant.name.titleize%></li>
   </ol>
 </nav>
@@ -104,10 +104,10 @@
         <div class="modal-body">
           <div class="center-div">
             <div class="align-left">
-              <p class="sm-tag"> <%= link_to(image_tag("facebook.svg", size: "12px"), "https://www.facebook.com/sharer.php?u=https://businessbites.herokuapp.com/restaurants/#{@restaurant.id}")%> <%= link_to "Facebook","https://www.facebook.com/sharer.php?u=https://businessbites.herokuapp.com/restaurants/#{@restaurant.id}"%>  </p>
+              <p class="sm-tag"> <%= link_to(image_tag("facebook.svg", size: "12px"), "https://www.facebook.com/sharer.php?u=https://businessbites.herokuapp.com/restaurants/#{@restaurant.id}")%> <%= link_to "Facebook","https://www.facebook.com/sharer.php?u=http://www.getbusinessbites.club/restaurants/#{@restaurant.id}", target: :_blank%>  </p>
               <p class="sm-tag"> <%= link_to(image_tag("gmail.svg", size: "12px"), "#")%> <%= link_to "Email","#"%></p>
               <p class="sm-tag"> <%= link_to(image_tag("linkedin.svg", size: "12px"), "#")%> <%= link_to "LinkedIn","#"%></p>
-              <p class="sm-tag"> <%= link_to(image_tag("whatsapp.svg", size: "12px"), "https://wa.me/?text=https://businessbites.herokuapp.com/restaurants/#{@restaurant.id}")%> <%= link_to "WhatsApp","https://wa.me/?text=https://businessbites.herokuapp.com/restaurants/#{@restaurant.id}"%> </p>
+              <p class="sm-tag"> <%= link_to(image_tag("whatsapp.svg", size: "12px"), "https://wa.me/?text=http://www.getbusinessbites.club/restaurants/#{@restaurant.id}")%> <%= link_to "WhatsApp","https://wa.me/?text=https://http://www.getbusinessbites.club/restaurants/#{@restaurant.id}"%> </p>
             </div>
           </div>
         </div>
@@ -125,7 +125,7 @@
   </div>
 
   <div class="centered">
-    <%=link_to "Book now!", @restaurant.link, class:'button-big', style:'color:white; font-weight:lighter; font-size: 20px; width:100%; padding-top:16px; margin-top:16px;' %>
+    <%=link_to "Book now!", @restaurant.link, target: :_blank, class:'button-big', style:'color:white; font-weight:lighter; font-size: 20px; width:100%; padding-top:16px; margin-top:16px;' %>
   </div>
 
   <h3> Address & Map</h3>
