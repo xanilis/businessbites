@@ -1,2 +1,21 @@
-<h1>Favorites#index</h1>
-<p>Find me in app/views/favorites/index.html.erb</p>
+<ul class= "restaurantlist">
+    <%@favorites.each do |favorite| %>
+      <%= link_to restaurant_path(restaurant) do %>
+        <div class="card-trip">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" />
+            <div class="card-trip-infos">
+              <div>
+                <h2><strong><%=restaurant.name%></strong></h2>
+                  <li class="sc-italics">
+                    <%= restaurant.food_style_list%> |
+                    <%= restaurant.atmosphere_list %> |
+                    <%= restaurant.food_philosophy_list %> |
+                    <%= restaurant.extra_list %>
+                  </li>
+                <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * restaurant.user_rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - restaurant.user_rating) %></p>
+              </div>
+            </div>
+        </div>
+      <% end %>
+    <% end %>
+  </ul>

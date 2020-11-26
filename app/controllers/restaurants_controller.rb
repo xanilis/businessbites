@@ -29,16 +29,15 @@ class RestaurantsController < ApplicationController
   end
 
   def fav
-    @restaurant = Restaurand.find(params[:id])
-    Favourite.create(user: current_user, restaurant: @restaurant)
+    @restaurant = Restaurant.find(params[:id])
+    Favorite.create(user: current_user, restaurant: @restaurant)
 
     redirect_to restaurant_path(@restaurant)
   end
 
-
   def unfav
-    @restaurant = Restaurand.find(params[:id])
-    @fv = Favourite.find_by(user: current_user, restaurant: @restaurant)
+    @restaurant = Restaurant.find(params[:id])
+    @fv = Favorite.find_by(user: current_user, restaurant: @restaurant)
     @fv.destroy
 
     redirect_to restaurant_path(@restaurant)

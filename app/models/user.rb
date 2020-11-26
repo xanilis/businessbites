@@ -10,9 +10,7 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :restaurants, through: :favorites
 
-
   def favourited?(resto)
     Favorite.find_by(user: self, restaurant: resto).present?
   end
-
 end
