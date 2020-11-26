@@ -110,7 +110,7 @@ puts "Seeding 10 random reviews.."
 100.times do
   Review.create!(
    description: Faker::Restaurant.review,
-   title: Faker::Quote.jack_handey,
+   title: Faker::Lorem.sentence(word_count: 3),
    rating: rand(1..5),
    restaurant: Restaurant.all.sample,
    user: User.all.sample
@@ -118,75 +118,7 @@ puts "Seeding 10 random reviews.."
   puts "Created review #{Review.count}"
 end
 
-puts "Seeding real looking Reviews for EPUR"
 
-  Review.create!(
-   description: Faker::Restaurant.review,
-   title: "Amazing food in a well-crafted atmosphere",
-   rating: rand(4..5),
-   restaurant: Restaurant.all.sample,
-   user: User.all.sample
-  )
-
-    Review.create!(
-   description: Faker::Restaurant.review,
-   title: "Clients loved it",
-   rating: rand(4..5),
-   restaurant: Restaurant.all.sample,
-   user: User.all.sample
-  )
-
-      Review.create!(
-   description: Faker::Restaurant.review,
-   title: "The Pork Belly is out of this world",
-   rating: rand(4..5),
-   restaurant: Restaurant.all.sample,
-   user: User.all.sample
-  )
-
-    Review.create!(
-   description: Faker::Restaurant.review,
-   title: "Amazing Christmas Company event with incredible food",
-   rating: rand(4..5),
-   restaurant: Restaurant.all.sample,
-   user: User.all.sample
-  )
-
-  puts "Done"
-
-  puts "Seeding real looking Reviews for Belcanto"
-
-  Review.create!(
-   description: Faker::Restaurant.review,
-   title: "Slick, elegant, luxurious",
-   rating: rand(4..5),
-   restaurant: Restaurant.all.sample,
-   user: User.all.sample
-  )
-
-    Review.create!(
-   description: Faker::Restaurant.review,
-   title: "I got promoted here - yay!",
-   rating: rand(4..5),
-   restaurant: Restaurant.all.sample,
-   user: User.all.sample
-  )
-
-    Review.create!(
-   description: Faker::Restaurant.review,
-   title: "Gorgeous food presentation, amazing wine",
-   rating: rand(4..5),
-   restaurant: Restaurant.all.sample,
-   user: User.all.sample
-  )
-
-    Review.create!(
-   description: Faker::Restaurant.review,
-   title: "Amazing food in a well-crafted atmosphere",
-   rating: rand(4..5),
-   restaurant: Restaurant.all.sample,
-   user: User.all.sample
-  )
 
 
 puts "Seeding completed. Well done."
