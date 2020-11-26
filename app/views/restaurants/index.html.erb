@@ -1,12 +1,12 @@
 <div class="index">
-  
+
   <%@valid_markers = [] %>
   <%@markers.each do |marker| %>
     <%unless marker[:lat].nil?%>
       <%@valid_markers << marker%>
     <%end%>
   <%end%>
-  
+
   <div class="map-index" id="map"
     style="width: 100%; height: 355px;"
     data-markers="<%= @valid_markers.to_json %>"
@@ -67,7 +67,7 @@
     <%@restaurants.each do |restaurant| %>
       <%= link_to restaurant_path(restaurant) do %>
         <div class="card-trip">
-          <%if restaurant.photo.include? "local"%> 
+          <%if restaurant.photo.include? "local"%>
             <%= image_tag("#{restaurant.photo.split(/,/)[0]}") %>
           <%else%>
             <img src= '<%= restaurant.photo %>'>

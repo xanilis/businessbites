@@ -66,7 +66,6 @@ Restaurant.create!(
   extra_list: "extensive wine list".titleize,
   suitable_for_list: "One2One".capitalize,
   user_rating: 5,
-  favorite_id: Favorite.all.sample.id,
 )
 
 puts "EPUR created."
@@ -86,7 +85,6 @@ restaurants.each do |restaurant|
     extra_list: ["extensive wine list","amuse-bouche","live music"].sample.capitalize,
     suitable_for_list: ["One2One","Small Groups","Big Groups"].sample.capitalize,
     user_rating: rand(2..5),
-    favorite_id: Favorite.all.sample.id,
     link: restaurant["url"]
   )
   puts "Created restaurant #{Restaurant.count} "
