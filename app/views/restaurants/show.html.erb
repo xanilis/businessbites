@@ -37,6 +37,19 @@
       <%end%>
     </ol>
 
+    <% if user_signed_in?  %>
+      <% if current_user.favourited?(@restaurant) %>
+        <%= link_to unfav_restaurant_path(@restaurant), method: :post do %>
+          <i class="fa fa-heart" style="color:red;"></i>
+        <% end %>
+      <% else %>
+        <%= link_to fav_restaurant_path(@restaurant), method: :post do %>
+          <i class="fa fa-heart"></i>
+        <% end %>
+      <% end %>
+    <% end %>
+
+
     <div class="carousel-inner">
       <div class="carousel-item active">
         <% unless @restaurant.photo.empty?%>

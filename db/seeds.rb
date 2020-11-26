@@ -4,8 +4,8 @@ restaurants = JSON.parse(file)
 
 puts "destroying all entries... :("
 Review.destroy_all
-Restaurant.destroy_all
 Favorite.destroy_all
+Restaurant.destroy_all
 User.destroy_all
 
 puts "DB emptied! :)"
@@ -24,14 +24,6 @@ end
 
 puts "Seeding 10 random favorite restaurant lists.."
 
-10.times do
-  Favorite.create!(
-    title: Faker::Coffee.blend_name,
-    status: false,
-    user: User.all.sample
-  )
-  puts "Created favorite list #{Favorite.count}"
-end
 
 puts "Seeding Belcanto"
 
@@ -55,8 +47,7 @@ Restaurant.create!(
   food_philosophy_list: "haute-cuisine".titleize,
   extra_list: "extensive wine list".titleize,
   suitable_for_list: "One2One".capitalize,
-  user_rating: 5,
-  favorite_id: Favorite.all.sample.id,
+  user_rating: 5
 )
 
 puts "Belcanto created."
@@ -76,10 +67,21 @@ restaurants.each do |restaurant|
     extra_list: ["extensive wine list","amuse-bouche","live music"].sample.capitalize,
     suitable_for_list: ["One2One","Small Groups","Big Groups"].sample.capitalize,
     user_rating: rand(1..5),
-    favorite_id: Favorite.all.sample.id,
     link: restaurant["url"]
   )
   puts "Created restaurant #{Restaurant.count} "
+end
+
+
+puts "Seeding 10 random favorite restaurant lists.."
+10.times do
+  Favorite.create!(
+    title: Faker::Coffee.blend_name,
+    status: false,
+    user: User.all.sample,
+    restaurant: Restaurant.all.sample,
+  )
+  puts "Created favorite list #{Favorite.count}"
 end
 
 
