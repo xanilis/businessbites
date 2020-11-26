@@ -1,5 +1,6 @@
 class Restaurant < ApplicationRecord
   has_many :reviews
+  has_many :favorites
 
   acts_as_taggable_on :food_styles
   acts_as_taggable_on :atmospheres

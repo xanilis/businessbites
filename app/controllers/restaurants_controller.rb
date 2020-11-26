@@ -29,6 +29,21 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def fav
+    @restaurant = Restaurant.find(params[:id])
+    Favorite.create(user: current_user, restaurant: @restaurant)
+
+    redirect_to restaurant_path(@restaurant)
+  end
+
+  def unfav
+    @restaurant = Restaurant.find(params[:id])
+    @fv = Favorite.find_by(user: current_user, restaurant: @restaurant)
+    @fv.destroy
+
+    redirect_to restaurant_path(@restaurant)
+  end
+
   def show
     @restaurant = Restaurant.find(params[:id])
     @marker = [{
