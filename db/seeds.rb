@@ -29,7 +29,7 @@ puts "Seeding Belcanto"
 
 Restaurant.create!(
   name: "Belcanto",
-  address: "Rua Serpa Pinto 10",
+  address: "Rua Serpa Pinto 10, Lisbon, Portugal",
   description: "At Belcanto, José Avillez offers a unique gastronomic and sensory journey
                 —contemporary Portuguese cuisine
                 in a sophisticated setting that takes us on a journey in time,
@@ -48,7 +48,7 @@ Restaurant.create!(
   extra_list: "amuse bouche".titleize,
   suitable_for_list: "One2One".capitalize,
   user_rating: 5,
-  link: "https://belcanto.pt/en/"
+  link: "https://belcanto.pt/en/",
 )
 
 puts "Belcanto created."
@@ -57,7 +57,7 @@ puts "Seeding EPUR"
 
 Restaurant.create!(
   name: "EPUR",
-  address: "Largo da Academia Nacional de Belas Artes 14",
+  address: "largo de sao juliao, Lisbon",
   description: "There’s a heaven inside each body, hidden in every palate. In it there is a universe waiting to be dazzled by unknown ‘ingre-details’.",
   photo: "localepur1.jpg, localepur2.jpg, localepur3.jpg, localepur4.jpg, localepur5.jpg",
   food_style_list: "Portuguese".capitalize,
@@ -67,7 +67,7 @@ Restaurant.create!(
   extra_list: "extensive wine list".titleize,
   suitable_for_list: "One2One".capitalize,
   user_rating: 5,
-  link: "https://epur.pt/"
+  link: "https://epur.pt/",
 )
 
 puts "EPUR created."
@@ -110,7 +110,7 @@ puts "Seeding 10 random reviews.."
 100.times do
   Review.create!(
    description: Faker::Restaurant.review,
-   title: Faker::Hipster.sentence,
+   title: Faker::Quote.jack_handey,
    rating: rand(1..5),
    restaurant: Restaurant.all.sample,
    user: User.all.sample
@@ -144,7 +144,7 @@ puts "Seeding real looking Reviews for EPUR"
    user: User.all.sample
   )
 
-        Review.create!(
+    Review.create!(
    description: Faker::Restaurant.review,
    title: "Amazing Christmas Company event with incredible food",
    rating: rand(4..5),
