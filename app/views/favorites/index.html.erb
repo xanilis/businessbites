@@ -1,7 +1,7 @@
-<ul class= "restaurantlist">
-    <%@favorites.each do |favorite| %>
-      <%= link_to restaurant_path(favorite.restaurant) do %>
-        <div class="card-trip">
+  <ul class= "restaurantlist">
+      <%@favorites.each do |favorite| %>
+        <%= link_to restaurant_path(favorite.restaurant) do %>
+          <div class="card-trip">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" />
             <div class="card-trip-infos">
               <div>
@@ -12,10 +12,10 @@
                     <%= favorite.restaurant.food_philosophy_list %> |
                     <%= favorite.restaurant.extra_list %>
                   </li>
-                <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * favorite.restaurant.user_rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - favorite.restaurant.user_rating) %></p>
+                  <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * favorite.restaurant.user_rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - favorite.restaurant.user_rating) %></p>
               </div>
             </div>
-        </div>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
   </ul>
