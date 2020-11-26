@@ -1,7 +1,13 @@
-<div class="onemore">
-<h1>Favorite restaurants</h1>
+<div class="map-fav" id="map"
+  style="width: 100%%; height: 300px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-<div class="lastpls">
+
+<div  class="container">
+
+<h1 class="fav-header">Favorites</h1>
+
   <ul class= "restaurantlist">
       <%@favorites.each do |favorite| %>
         <%= link_to restaurant_path(favorite.restaurant) do %>
@@ -23,4 +29,9 @@
         <% end %>
       <% end %>
   </ul>
+
+<%= link_to "Back to Restaurants", restaurants_path, class: 'back-link' %>
+
 </div>
+
+
