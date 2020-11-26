@@ -1,3 +1,7 @@
+<div class="onemore">
+<h1>Favorite restaurants</h1>
+</div>
+<div class="lastpls">
   <ul class= "restaurantlist">
       <%@favorites.each do |favorite| %>
         <%= link_to restaurant_path(favorite.restaurant) do %>
@@ -19,3 +23,4 @@
         <% end %>
       <% end %>
   </ul>
+</div>
