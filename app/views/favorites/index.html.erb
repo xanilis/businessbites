@@ -12,7 +12,12 @@
       <%@favorites.each do |favorite| %>
         <%= link_to restaurant_path(favorite.restaurant) do %>
           <div class="card-trip">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" />
+            <%if favorite.restaurant.photo.include? "local" %>
+            <%= image_tag("#{favorite.restaurant.photo.split(/,/)[0]}") %>
+          <%else%>
+            <img src= '<%= favorite.restaurant.photo %>'>
+          <%end%>
+
             <div class="card-trip-infos">
               <div>
                 <h2><strong><%=favorite.restaurant.name%></strong></h2>
