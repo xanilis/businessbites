@@ -1,3 +1,7 @@
+require 'json'
+file = File.read("db/try.json")
+restaurants = JSON.parse(file)
+
 puts "destroying all entries... :("
 Review.destroy_all
 Favorite.destroy_all
@@ -5,6 +9,7 @@ Restaurant.destroy_all
 User.destroy_all
 
 puts "DB emptied! :)"
+
 
 puts "Seeding 10 random users.."
 
@@ -35,7 +40,7 @@ Restaurant.create!(
                 welcoming and discreet service, and an extraordinary wine selection
                 that showcases some of the best Portuguese wines
                 as well as other celebrated international references.",
-  photo: "belcanto1.jpg, belcanto2.jpg, belcanto3.jpg, belcanto4.jpg, belcanto5.jpg",
+  photo: ["belcanto1.jpg, belcanto2.jpg, belcanto3.jpg, belcanto4.jpg, belcanto5.jpg"],
   food_style_list: "Portuguese".capitalize,
   atmosphere_list: "luxurious".capitalize,
   area_list: "chiado".capitalize,
@@ -48,21 +53,26 @@ Restaurant.create!(
 puts "Belcanto created."
 
 
-puts "Seeding 10 random restaurants"
-
-10.times do
+puts "Seeding real restaurants"
+restaurants.each do |restaurant|
   Restaurant.create!(
-    name: Faker::Restaurant.name,
-    address: Faker::Address.full_address,
+    name: restaurant["name"],
+    address: restaurant["location"]["display_address"].join(" "),
     description: Faker::Restaurant.description,
-    photo: "",
+    photo: restaurant["image_url"],
     food_style_list: ["Japanese","Fusion","Latin","Portuguese","Spanish","French","Italian"].sample.capitalize,
     atmosphere_list: ["Calm","Formal","Casual","luxurious"].sample.capitalize,
     area_list: ["chiado","bairro alto","alfama","cascais","oeiras","carcavelos","belém","baixa","rossio","Alcântara","Príncipe Real","Parque das Nações"].sample.capitalize,
     food_philosophy_list: ["vegan","vegetarian","seafood","traditional","modern","local","experimential","haute-cuisine"].sample.capitalize,
     extra_list: ["extensive wine list","amuse-bouche","live music"].sample.capitalize,
     suitable_for_list: ["One2One","Small Groups","Big Groups"].sample.capitalize,
+<<<<<<< HEAD
     user_rating: rand(1..5)
+=======
+    user_rating: rand(1..5),
+    favorite_id: Favorite.all.sample.id,
+    link: restaurant["url"]
+>>>>>>> 5144897704151f8de8a56b1fc86ad7eaa2c2c972
   )
   puts "Created restaurant #{Restaurant.count} "
 end

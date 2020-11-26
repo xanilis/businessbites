@@ -40,7 +40,7 @@ gem 'pg_search', '~> 2.3.0'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'geocoder'
 gem 'acts_as_favoritor'
-
+gem 'json'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

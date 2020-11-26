@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_11_25_172510) do
     t.integer "user_rating"
     t.float "latitude"
     t.float "longitude"
+    t.string "link"
   end
 
   create_table "reviews", force: :cascade do |t|

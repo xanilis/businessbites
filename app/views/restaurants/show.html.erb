@@ -8,7 +8,7 @@
 <div class="container">
   <span class="nxt-each">
     <h1 class="main-title"><%=@restaurant.name%></h1>
-    <button type="button" class="share-btn" data-toggle="modal" data-target="#exampleModalCenter">Share</button>
+    <button type="button" class="share-btn" data-toggle="modal" data-target="#exampleModalCenter"><%=image_tag("sharecircle.png", class: "icon")%></button>
   </span>
 </div>
 
@@ -92,9 +92,6 @@
     <span class="badge badge-info mg-left"><%= @restaurant.food_style_list %></span>
   </p>
 
-
-
-
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -121,25 +118,21 @@
 
   <h3> Details </h3>
 
-  <div class="card-deck inline">
+  <div class="container">
     <div class="card">
-      <div class="card-body">
-        <p><%=@restaurant.description%></p>
-      </div>
+      <p><%=@restaurant.description%></p>
     </div>
   </div>
 
   <div class="centered">
-    <%=link_to "Book now!", restaurant_path, class:'button-big', style:'color:white; font-weight:bold; width:100%; padding-top:16px; margin-top:16px;' %>
+    <%=link_to "Book now!", @restaurant.link, class:'button-big', style:'color:white; font-weight:bold; width:100%; padding-top:16px; margin-top:16px;' %>
   </div>
 
   <h3> Address & Map</h3>
 
-  <div class="card-deck inline">
+  <div class="container">
     <div class="card">
-      <div class="card-body">
         <p><%=@restaurant.address%></p>
-      </div>
     </div>
   </div>
 
@@ -150,24 +143,19 @@
 
   <h3> Reviews </h3>
 
-  <div class="rev-cont">
 
     <p><%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %></p>
 
-      <% @restaurant.reviews.each do |review| %>
-          <div class="card-deck inline">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title"><%=review.title%></h5>
-                <p> <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * review.rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - review.rating) %></p>
-                <p class="card-text"><%=review.description%></p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Review by <%=review.user.email%></small>
-              </div>
-            </div>
-          </div>
-      <% end %>
+  <div class="container">
+    <% @restaurant.reviews.each do |review| %>
+        <div class="card-trip">
+          <h2 class="card-title"><%=review.title%></h2>
+          <p id="email"><%=review.user.email%></p>
+          <p> <p class="star"><%= image_tag("star_full.png", style: 'height:16px;') * review.rating %><%= image_tag("star_empty.png", style: 'height:16px;') * (5 - review.rating) %></p>
+          <p><%=review.description%></p>
+        </div>
+    <% end %>
   </div>
+
 
 </div>
