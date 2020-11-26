@@ -5,10 +5,11 @@
   </ol>
 </nav>
 
-<div class="container">
-  <span class="nxt-each">
+<div class="container-show">
+  <span>
     <h1 class="main-title"><%=@restaurant.name%></h1>
-
+  </span>
+  <span >
             <% if user_signed_in?  %>
       <% if current_user.favourited?(@restaurant) %>
         <%= link_to unfav_restaurant_path(@restaurant), method: :post do %>
@@ -16,12 +17,12 @@
         <% end %>
       <% else %>
         <%= link_to fav_restaurant_path(@restaurant), method: :post do %>
-          <i class="fa fa-heart"></i>
+          <i class="fa fa-heart" id="heart" =></i>
         <% end %>
       <% end %>
     <% end %>
-         
-    <button type="button" class="share-btn" data-toggle="modal" data-target="#exampleModalCenter"><%=image_tag("sharecircle.png", class: "icon")%></button>
+
+    <button type="button" class="share-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-share-square"></i></button>
   </span>
 </div>
 
