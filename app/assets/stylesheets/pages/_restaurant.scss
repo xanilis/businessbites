@@ -45,6 +45,7 @@ p a{
   padding-left: 0px;
   align-items: center;
   margin-left: 8px;
+  width: 100%
 }
 
 .ul {
@@ -213,9 +214,11 @@ p a{
 }
 
 
-.nxt-each {
+.container-show {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 6px;
 }
 
 .share-btn {
@@ -223,19 +226,25 @@ p a{
   text-decoration: underline;
   color: black;
   background-color: transparent;
-  margin-bottom: 0px;
   padding-right: 8px;
 }
 
 .fa-heart {
   font-size: 24px;
-  padding: 16px 0px 16px 16px;
-  margin-left: 160px;
+  padding: 6px 0px 6px 6px;
   color: #293241;
-  
 }
+
+.fa-share-square {
+  font-size: 24px;
+  padding: 6px 0px 6px 6px;
+  color: #293241;
+}
+
 
 .align-bottom {
 
   align-items: center !important;
 }
+
+
