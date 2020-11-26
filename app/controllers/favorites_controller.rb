@@ -3,6 +3,13 @@ class FavoritesController < ApplicationController
 
   def index
     @favorites = current_user.favorites
+
+    @markers = @favorites.map do |fav|
+      {
+        lat: fav.restaurant.latitude,
+        lng: fav.restaurant.longitude
+      }
+  end
   end
 
   def edit
