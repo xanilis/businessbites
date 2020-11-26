@@ -8,9 +8,10 @@ p {
 
 h1 {
   color: #21295C;
-  margin-top: 0px !important;
   text-align: left !important;
+  margin-top: 10px;
   margin-bottom: 0px;
+  font-size: 36px;
 }
 
 h3 {
@@ -224,4 +225,17 @@ p a{
   background-color: transparent;
   margin-bottom: 0px;
   padding-right: 8px;
+}
+
+.fa-heart {
+  font-size: 24px;
+  padding: 16px 0px 16px 16px;
+  margin-left: 160px;
+  color: #293241;
+  
+}
+
+.align-bottom {
+
+  align-items: center !important;
 }

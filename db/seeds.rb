@@ -29,7 +29,7 @@ puts "Seeding Belcanto"
 
 Restaurant.create!(
   name: "Belcanto",
-  address: "R. Serpa Pinto 10A",
+  address: "Rua Serpa Pinto 10",
   description: "At Belcanto, José Avillez offers a unique gastronomic and sensory journey
                 —contemporary Portuguese cuisine
                 in a sophisticated setting that takes us on a journey in time,
@@ -45,9 +45,10 @@ Restaurant.create!(
   atmosphere_list: "luxurious".capitalize,
   area_list: "chiado".capitalize,
   food_philosophy_list: "haute-cuisine".titleize,
-  extra_list: "extensive wine list".titleize,
+  extra_list: "amuse bouche".titleize,
   suitable_for_list: "One2One".capitalize,
-  user_rating: 5
+  user_rating: 5,
+  link: "https://belcanto.pt/en/"
 )
 
 puts "Belcanto created."
@@ -59,13 +60,14 @@ Restaurant.create!(
   address: "Largo da Academia Nacional de Belas Artes 14",
   description: "There’s a heaven inside each body, hidden in every palate. In it there is a universe waiting to be dazzled by unknown ‘ingre-details’.",
   photo: "localepur1.jpg, localepur2.jpg, localepur3.jpg, localepur4.jpg, localepur5.jpg",
-  food_style_list: "fusion".capitalize,
+  food_style_list: "Portuguese".capitalize,
   atmosphere_list: "luxurious".capitalize,
-  area_list: "alfama".capitalize,
-  food_philosophy_list: "haute-cuisine".titleize,
+  area_list: "chiado".capitalize,
+  food_philosophy_list: "experimential".titleize,
   extra_list: "extensive wine list".titleize,
   suitable_for_list: "One2One".capitalize,
   user_rating: 5,
+  link: "https://epur.pt/"
 )
 
 puts "EPUR created."
